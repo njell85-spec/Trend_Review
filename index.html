@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EM/CCM 문헌 리뷰 아카이브</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  details summary { cursor:pointer; list-style:none; }
+  details summary::-webkit-details-marker { display:none; }
+  .chev { transition:transform .22s ease; }
+  details[open] > summary .chev { transform:rotate(180deg); }
+  .slide-in { animation:slideIn .22s ease; }
+  @keyframes slideIn {
+    from { opacity:0; transform:translateY(-5px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .pico-row:nth-child(odd){ background:#f8fafc; }
+</style>
+</head>
+<body class="bg-slate-100 min-h-screen text-slate-800">
+
+<!-- ── 헤더 ── -->
+<div class="bg-gradient-to-br from-blue-950 to-blue-700 text-white px-5 py-8">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-2xl mb-1">📚</div>
+    <h1 class="text-xl font-bold">EM/CCM 문헌 리뷰 아카이브</h1>
+    <p class="text-blue-200 text-xs mt-1">PubMed 자동 분석 · Claude AI · 매일 업데이트</p>
+  </div>
+</div>
+
+<!-- ── 통계 ── -->
+<div class="bg-white border-b border-slate-200 sticky top-0 z-20 shadow-sm">
+  <div class="max-w-2xl mx-auto px-5 py-2.5 flex gap-5 text-xs text-slate-500">
+    <span>🗓 누적 <b class="text-blue-700">3일</b></span>
+    <span>📄 총 분석 <b class="text-blue-700">9편</b></span>
+    <span>✅ 최신 <b class="text-green-600">2026-06-09</b></span>
+  </div>
+</div>
+
+<div class="max-w-2xl mx-auto px-3 py-5 space-y-3">
+
+<!-- ═══════════════════════════════════════════
+     2026-06-09 — TODAY (날짜 열림 + 논문 열림)
+══════════════════════════════════════════════ -->
+<details open class="rounded-xl overflow-hidden shadow-sm border border-blue-200 bg-white">
+  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">TODAY</span>
+        <span class="font-bold text-blue-900 text-sm">2026-06-09</span>
+        <span class="text-slate-400 text-xs">추천 3편</span>
+      </div>
+      <div class="space-y-0.5">
+        <div class="text-xs text-slate-600">① Management of Acute Hemorrhage and Damage-Control Resuscitation</div>
+        <div class="text-[10px] text-slate-400 pl-3">Techniques in VIR · 2026-Jun · PMID 42230073</div>
+        <div class="text-xs text-slate-600 mt-1">② The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</div>
+        <div class="text-[10px] text-slate-400 pl-3">JAMA Network Open · 2026-Jun-01 · PMID 42228369</div>
+        <div class="text-xs text-slate-600 mt-1">③ Multicenter Validation of Clinical Sepsis Phenotypes</div>
+        <div class="text-[10px] text-slate-400 pl-3">JAMA Network Open · 2026-Jun-01 · PMID 42223936</div>
+      </div>
+    </div>
+    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </summary>
+
+  <div class="slide-in border-t border-blue-100 divide-y divide-slate-100">
+
+    <!-- ── 논문 01 (열림) ── -->
+    <details open class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation</div>
+          <div class="text-[10px] text-slate-400">Singhal S 외 · Techniques in VIR · 2026-Jun</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-blue-700">6.0</span>
+          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
+        <div class="bg-blue-50 border-l-3 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">
+          VIR 의사가 급성 출혈·출혈성 쇼크 환자 관리 시 적용해야 할 근거 기반 DCR 원칙은?
+        </div>
+        <table class="w-full text-[11px] border-collapse">
+          <tr class="pico-row"><td class="py-1.5 px-2.5 w-5 font-bold text-blue-600">P</td><td class="py-1.5 px-2.5 text-slate-700">급성·중증 출혈·출혈성 쇼크로 VIR 시술을 받는 환자 (서술적 종설, 표본 크기 없음)</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-blue-600">I</td><td class="py-1.5 px-2.5 text-slate-700">근거 중심 DCR — ATC 병태생리 관리, 균형 수혈 원칙, 항응고 역전 가이드라인</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-blue-600">C</td><td class="py-1.5 px-2.5 text-slate-700">비프로토콜화된 전통적 소생법과 암묵적 비교 (공식 대조군 없음)</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-blue-600">O</td><td class="py-1.5 px-2.5 text-slate-700">출혈 조절 최적화, ATC 예방·교정, 생존율 향상 (정량 데이터 없음)</td></tr>
+        </table>
+        <div class="mt-2.5 bg-amber-50 border-l-3 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
+          <b class="text-amber-700">💡 임상 포인트</b><br>
+          VIR 의사는 단순 시술자가 아닌 중환자 치료 협력자로서 DCR 원칙·ATC 교정·항응고 역전에 숙달해야 한다.
+        </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 원문</a>
+      </div>
+    </details>
+
+    <!-- ── 논문 02 (열림) ── -->
+    <details open class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</div>
+          <div class="text-[10px] text-slate-400">He S 외 · JAMA Network Open · 2026-Jun-01</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-emerald-700">7.5</span>
+          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
+        <div class="bg-blue-50 border-l-3 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">
+          홍콩 입원 소아(28일–18세)에서 Phoenix-8 기준이 pSOFA, PELOD-2, Phoenix-4보다 사망률 예측에 우수한가?
+        </div>
+        <table class="w-full text-[11px] border-collapse">
+          <tr class="pico-row"><td class="py-1.5 px-2.5 w-5 font-bold text-emerald-600">P</td><td class="py-1.5 px-2.5 text-slate-700">추정 감염 소아 140,633명 (홍콩 36개 병원, 2009–2024; 중앙값 4.0세)</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-emerald-600">I</td><td class="py-1.5 px-2.5 text-slate-700">Phoenix-8 기준 (score ≥2 = 패혈증; 17변수, 8구성요소)</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-emerald-600">C</td><td class="py-1.5 px-2.5 text-slate-700">Phoenix-4, pSOFA, PELOD-2</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-emerald-600">O</td><td class="py-1.5 px-2.5 text-slate-700"><b>Phoenix-8 AUROC 0.91</b> (95% CI 0.89–0.93) · pSOFA 0.80 · 패혈증 5.4% · 사망률 4.5% vs 0.1% (P&lt;0.001)</td></tr>
+        </table>
+        <div class="mt-2.5 bg-amber-50 border-l-3 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
+          <b class="text-amber-700">💡 임상 포인트</b><br>
+          Phoenix-8은 PICU 외 일반 소아 병동 포함 전체 스펙트럼에서 사망 변별력 우수. 미국 외 환경에서도 일반화 가능성 지지.
+        </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 원문</a>
+      </div>
+    </details>
+
+    <!-- ── 논문 03 (열림) ── -->
+    <details open class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes (SENECA)</div>
+          <div class="text-[10px] text-slate-400">Yoon CH 외 · JAMA Network Open · 2026-Jun-01</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-violet-700">5.0</span>
+          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
+        <div class="bg-blue-50 border-l-3 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">
+          SENECA 4가지 패혈증 표현형(α,β,γ,δ)이 Stockholm·Oxford·Oslo 독립 코호트에서 재현 가능한가?
+        </div>
+        <table class="w-full text-[11px] border-collapse">
+          <tr class="pico-row"><td class="py-1.5 px-2.5 w-5 font-bold text-violet-600">P</td><td class="py-1.5 px-2.5 text-slate-700">성인 ED 패혈증 48,246명 (Stockholm 30,865 + Oxford 15,575 + Oslo 1,806)</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-violet-600">I</td><td class="py-1.5 px-2.5 text-slate-700">k=4 k-means 합의 군집 분석 (29변수, 기관별 독립 시행, MICE 다중대체)</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-violet-600">C</td><td class="py-1.5 px-2.5 text-slate-700">미국 SENECA 도출 코호트 표현형(α,β,γ,δ)과 교차 비교</td></tr>
+          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-violet-600">O</td><td class="py-1.5 px-2.5 text-slate-700"><b>재현성 낮음</b> — Cohen κ 0.32–0.40 · ARI 0.21–0.27 · Fleiss κ 0.47 · 전체 일치율 41%</td></tr>
+        </table>
+        <div class="mt-2.5 bg-amber-50 border-l-3 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
+          <b class="text-amber-700">💡 임상 포인트</b><br>
+          SENECA 표현형은 비미국 환경에서 로컬 검증 없이 적용 시 주의 필요.
+        </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 원문</a>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+
+<!-- ═══════════════════════════════════════════
+     2026-06-08 — 접힘 (제목·저널·날짜 보임)
+══════════════════════════════════════════════ -->
+<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-slate-50 transition select-none">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">-1일</span>
+        <span class="font-bold text-slate-700 text-sm">2026-06-08</span>
+        <span class="text-slate-400 text-xs">추천 3편</span>
+      </div>
+      <div class="space-y-0.5">
+        <div class="text-xs text-slate-500">① Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</div>
+        <div class="text-[10px] text-slate-400 pl-3">Frontiers in Immunology · 2026 · PMID 42238588</div>
+        <div class="text-xs text-slate-500 mt-1">② Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</div>
+        <div class="text-[10px] text-slate-400 pl-3">Critical Care Medicine · 2026-Jun · PMID 42219034</div>
+        <div class="text-xs text-slate-500 mt-1">③ Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</div>
+        <div class="text-[10px] text-slate-400 pl-3">Intensive Care Medicine · 2026-May · PMID 42201156</div>
+      </div>
+    </div>
+    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </summary>
+
+  <div class="slide-in border-t border-slate-100 divide-y divide-slate-100">
+    <!-- 논문 01 (접힘) -->
+    <details class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</div>
+          <div class="text-[10px] text-slate-400">Wang C 외 · Frontiers in Immunology · 2026</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-blue-700">7.0</span>
+          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
+        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
+      </div>
+    </details>
+    <!-- 논문 02 (접힘) -->
+    <details class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</div>
+          <div class="text-[10px] text-slate-400">Kim J 외 · Critical Care Medicine · 2026-Jun</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-emerald-700">7.5</span>
+          <span class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full">High</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
+        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
+      </div>
+    </details>
+    <!-- 논문 03 (접힘) -->
+    <details class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-violet-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</div>
+          <div class="text-[10px] text-slate-400">Park S 외 · Intensive Care Medicine · 2026-May</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-violet-700">6.0</span>
+          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
+        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
+      </div>
+    </details>
+  </div>
+</details>
+
+
+<!-- ═══════════════════════════════════════════
+     2026-06-06 — 접힘
+══════════════════════════════════════════════ -->
+<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-slate-50 transition select-none">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">-3일</span>
+        <span class="font-bold text-slate-700 text-sm">2026-06-06</span>
+        <span class="text-slate-400 text-xs">추천 3편</span>
+      </div>
+      <div class="space-y-0.5">
+        <div class="text-xs text-slate-500">① High-Flow Nasal Oxygen vs NIV in Acute Hypoxemic Respiratory Failure</div>
+        <div class="text-[10px] text-slate-400 pl-3">NEJM Evidence · 2026-Jun · PMID 42180234</div>
+        <div class="text-xs text-slate-500 mt-1">② Point-of-Care Ultrasound in Cardiac Arrest: Systematic Review</div>
+        <div class="text-[10px] text-slate-400 pl-3">Resuscitation · 2026-May · PMID 42165089</div>
+        <div class="text-xs text-slate-500 mt-1">③ Restrictive vs Liberal Transfusion Strategy in Septic Shock</div>
+        <div class="text-[10px] text-slate-400 pl-3">JAMA · 2026-May · PMID 42152341</div>
+      </div>
+    </div>
+    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </summary>
+  <div class="slide-in border-t border-slate-100 divide-y divide-slate-100">
+    <details class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">High-Flow Nasal Oxygen vs NIV in Acute Hypoxemic Respiratory Failure</div>
+          <div class="text-[10px] text-slate-400">Lee H 외 · NEJM Evidence · 2026-Jun</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-blue-700">8.0</span>
+          <span class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full">High</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
+        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
+      </div>
+    </details>
+    <details class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Point-of-Care Ultrasound in Cardiac Arrest: Systematic Review</div>
+          <div class="text-[10px] text-slate-400">Choi Y 외 · Resuscitation · 2026-May</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-emerald-700">7.0</span>
+          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
+        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
+      </div>
+    </details>
+    <details class="group">
+      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-violet-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-semibold text-slate-700 leading-snug">Restrictive vs Liberal Transfusion Strategy in Septic Shock</div>
+          <div class="text-[10px] text-slate-400">Jung M 외 · JAMA · 2026-May</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-xs font-bold text-violet-700">6.5</span>
+          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
+          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </summary>
+      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
+        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
+      </div>
+    </details>
+  </div>
+</details>
+
+</div>
+
+<div class="text-center text-[10px] text-slate-400 py-6 border-t border-slate-200 mt-2">
+  AI Literature Review Pipeline · Claude · PubMed 최근 30일
+</div>
+</body>
+</html>
