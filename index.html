@@ -1,894 +1,457 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>EM/CCM 문헌 리뷰 아카이브</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EM/CCM Trend_Review</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  details summary { cursor:pointer; list-style:none; }
-  details summary::-webkit-details-marker { display:none; }
-  .chev { transition:transform .22s ease; }
-  details[open] > summary .chev { transform:rotate(180deg); }
-  .slide-in { animation:slideIn .22s ease; }
-  @keyframes slideIn {
-    from { opacity:0; transform:translateY(-5px); }
-    to   { opacity:1; transform:translateY(0); }
+  :root { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] > summary .chev { transform: rotate(180deg); }
+  .chev { transition: transform 0.2s ease; }
+  .slide-in { animation: slideDown 0.15s ease-out; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-  .pico-row:nth-child(odd){ background:#f8fafc; }
+  .pico-tr:nth-child(even) { background: #f9fafb; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f3f4f6; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+  .letter-p { color: #111827; }
+  .letter-i { color: #374151; }
+  .letter-c { color: #6b7280; }
+  .letter-o { color: #111827; }
 </style>
 </head>
-<body class="bg-slate-100 min-h-screen text-slate-800">
+<body class="bg-gray-50 min-h-screen">
 
-<!-- ── 헤더 ── -->
-<div class="bg-gradient-to-br from-blue-950 to-blue-700 text-white px-5 py-8">
-  <div class="max-w-2xl mx-auto">
-    <div class="text-2xl mb-1">📚</div>
-    <h1 class="text-xl font-bold">EM/CCM 문헌 리뷰 아카이브</h1>
-    <p class="text-blue-200 text-xs mt-1">PubMed 자동 분석 · Claude AI · 매일 업데이트</p>
+<!-- ── Header ── -->
+<header class="bg-gray-900 text-white">
+  <div class="max-w-2xl mx-auto px-4 pt-8 pb-6">
+    <div class="flex items-baseline gap-3 mb-1">
+      <h1 class="text-2xl font-black tracking-tight">EM/CCM Trend_Review</h1>
+      <span class="text-gray-500 text-[10px] font-semibold uppercase tracking-widest">Daily</span>
+    </div>
+    <p class="text-gray-500 text-xs mb-6">Emergency Medicine &amp; Critical Care Medicine · AI-Powered Literature Pipeline · PubMed 30-day window</p>
+    <div class="flex items-end gap-6">
+      <div>
+        <div class="stat-days-count text-3xl font-black tabular-nums">3</div>
+        <div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Days</div>
+      </div>
+      <div class="w-px h-8 bg-gray-700 mb-1"></div>
+      <div>
+        <div class="stat-papers-count text-3xl font-black tabular-nums">9</div>
+        <div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Papers</div>
+      </div>
+      <div class="w-px h-8 bg-gray-700 mb-1"></div>
+      <div class="mb-0.5">
+        <div class="stat-updated-time text-sm font-semibold text-gray-300">2026. 06. 10. 11:10</div>
+        <div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Last Updated</div>
+      </div>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- ── 통계 ── -->
-<div class="bg-white border-b border-slate-200 sticky top-0 z-20 shadow-sm">
-  <div class="max-w-2xl mx-auto px-5 py-2.5 flex gap-5 text-xs text-slate-500">
-    <span>🗓 누적 <b class="text-blue-700">5일</b></span>
-    <span>📄 총 분석 <b class="text-blue-700">15편</b></span>
-    <span>✅ 최신 <b class="text-green-600">2026. 06. 10. 11:10</b></span>
-  </div>
-</div>
-
+<!-- ── Archive ── -->
 <div class="max-w-2xl mx-auto px-3 py-5 space-y-3">
-<!-- SECTION:2026-06-10 -->
-<details open class="rounded-xl overflow-hidden shadow-sm border border-blue-200 bg-white">
-<summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
-<div class="flex-1 min-w-0"><div class="flex items-center gap-2 mb-2">
-<span class="bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">TODAY</span>
-<span class="font-bold text-blue-900 text-sm">2026. 06. 10.</span>
-<span class="text-slate-400 text-xs">추천 3편</span>
-<span class="text-slate-300 text-[10px] ml-auto">생성 2026. 06. 10. 11:10</span>
-</div><div class="text-xs text-slate-600 mt-1">① Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</div><div class="text-[10px] text-slate-400 pl-3">N Engl J Med · 2026-May · PMID 42150044</div><div class="text-xs text-slate-600 mt-1">② High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure (SOHO Trial)</div><div class="text-[10px] text-slate-400 pl-3">N Engl J Med · 2026-Jun · PMID 41841715</div><div class="text-xs text-slate-600 mt-1">③ Procalcitonin + NEWS2 vs Usual Care for Sepsis ID in Emergency Department (PRONTO Trial)</div><div class="text-[10px] text-slate-400 pl-3">Lancet Respir Med · 2026-May · PMID 41881047</div></div>
-<svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-</summary>
-<div class="slide-in border-t border-blue-100 divide-y divide-slate-100"><details class="group"><summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none"><span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span><div class="flex-1 min-w-0"><div class="text-xs font-semibold text-slate-700 leading-snug">Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</div><div class="text-[10px] text-slate-400">Sperry J, Guyette F et al. · N Engl J Med · 2026</div></div><div class="flex items-center gap-2 flex-shrink-0"><span class="text-xs font-bold text-blue-700">8</span><svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></div></summary><div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50"><div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">외상 출혈에서 전혈 수혈, 성분수혈 대비 30일 사망률 차이 없음</div><table class="w-full border-collapse"><tr style="background:#f8fafc;"><td style="padding:5px 10px;width:20px;font-weight:700">P</td><td style="padding:5px 10px;color:#374151;font-size:11px">병원 전 단계 외상성 출혈 환자 1,020명 (44개 항공의료팀)</td></tr><tr style=""><td style="padding:5px 10px;width:20px;font-weight:700">I</td><td style="padding:5px 10px;color:#374151;font-size:11px">Type O 저역가 전혈(whole blood) 최대 2단위 수혈</td></tr><tr style="background:#f8fafc;"><td style="padding:5px 10px;width:20px;font-weight:700">C</td><td style="padding:5px 10px;color:#374151;font-size:11px">표준 성분수혈 (혈장, 적혈구 등)</td></tr><tr style=""><td style="padding:5px 10px;width:20px;font-weight:700">O</td><td style="padding:5px 10px;color:#374151;font-size:11px">30일 사망률: 전혈 25.9% vs 성분수혈 20.5% (OR 1.24; 95% CI 0.87–1.76; P=0.24)</td></tr></table><div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700"><b class="text-amber-700">💡 임상 포인트</b><br>병원 전 전혈 수혈이 성분수혈보다 우월하지 않음이 대규모 RCT로 확인됐습니다. 전혈 도입의 물류·비용 부담이 있는 HEMS 팀은 현행 성분수혈 프로토콜 유지가 합리적입니다. 향후 병원 전 수혈 전략에서 전혈의 역할 재정의가 필요합니다.</div><a href="https://pubmed.ncbi.nlm.nih.gov/42150044/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42150044</a></div></details><details class="group"><summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none"><span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span><div class="flex-1 min-w-0"><div class="text-xs font-semibold text-slate-700 leading-snug">High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure (SOHO Trial)</div><div class="text-[10px] text-slate-400">Frat JP et al. · N Engl J Med · 2026</div></div><div class="flex items-center gap-2 flex-shrink-0"><span class="text-xs font-bold text-emerald-700">7</span><svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></div></summary><div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50"><div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">급성 저산소 호흡부전에서 HFNC, 삽관률 감소시키나 28일 사망률 차이 없음</div><table class="w-full border-collapse"><tr style="background:#f8fafc;"><td style="padding:5px 10px;width:20px;font-weight:700">P</td><td style="padding:5px 10px;color:#374151;font-size:11px">급성 저산소성 호흡부전 성인 1,110명 (프랑스 42개 ICU, PaO₂/FiO₂ ≤200)</td></tr><tr style=""><td style="padding:5px 10px;width:20px;font-weight:700">I</td><td style="padding:5px 10px;color:#374151;font-size:11px">High-flow nasal cannula (HFNC) 산소요법</td></tr><tr style="background:#f8fafc;"><td style="padding:5px 10px;width:20px;font-weight:700">C</td><td style="padding:5px 10px;color:#374151;font-size:11px">표준 산소요법 (conventional O₂)</td></tr><tr style=""><td style="padding:5px 10px;width:20px;font-weight:700">O</td><td style="padding:5px 10px;color:#374151;font-size:11px">28일 사망률: 14.6% vs 14.6% (NS); 삽관률: 42.4% vs 48.4% (P&lt;0.05)</td></tr></table><div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700"><b class="text-amber-700">💡 임상 포인트</b><br>HFNC는 삽관률을 유의하게 낮추지만 28일 사망률을 개선하지는 못했습니다. 삽관 회피가 중요한 임상 목표일 때 HFNC 1차 적용 근거가 강화되었습니다. 응급실·ICU 초기 호흡 지원에서 HFNC를 우선 고려하는 전략을 지지하는 근거입니다.</div><a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 41841715</a></div></details><details class="group"><summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none"><span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span><div class="flex-1 min-w-0"><div class="text-xs font-semibold text-slate-700 leading-snug">Procalcitonin + NEWS2 vs Usual Care for Sepsis ID in Emergency Department (PRONTO Trial)</div><div class="text-[10px] text-slate-400">Todd S, Euden J et al. · Lancet Respir Med · 2026</div></div><div class="flex items-center gap-2 flex-shrink-0"><span class="text-xs font-bold text-violet-700">7</span><svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></div></summary><div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50"><div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">응급실 PCT+NEWS2 알고리즘이 항생제 타이밍 불변에도 28일 사망률 감소</div><table class="w-full border-collapse"><tr style="background:#f8fafc;"><td style="padding:5px 10px;width:20px;font-weight:700">P</td><td style="padding:5px 10px;color:#374151;font-size:11px">영국·웨일스 20개 응급실 패혈증 의심 성인 7,667명</td></tr><tr style=""><td style="padding:5px 10px;width:20px;font-weight:700">I</td><td style="padding:5px 10px;color:#374151;font-size:11px">Procalcitonin + NEWS2 기반 패혈증 의사결정 알고리즘 제공</td></tr><tr style="background:#f8fafc;"><td style="padding:5px 10px;width:20px;font-weight:700">C</td><td style="padding:5px 10px;color:#374151;font-size:11px">NEWS2만 이용한 표준 치료</td></tr><tr style=""><td style="padding:5px 10px;width:20px;font-weight:700">O</td><td style="padding:5px 10px;color:#374151;font-size:11px">IV 항생제 3시간 내 투여율 변화 없음; 28일 사망률 유의미하게 감소</td></tr></table><div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700"><b class="text-amber-700">💡 임상 포인트</b><br>PCT+NEWS2 알고리즘은 항생제 투여 타이밍을 바꾸지 않았으나 28일 사망률을 낮추는 효과를 보였습니다. 감염 및 비감염 환자 모두에서 사망률 개선이 나타나 진단 정밀도 향상이 치료 전반에 긍정적 영향을 미친 것으로 추정됩니다. 응급실 내 PCT 검사 활용의 임상적 근거가 대규모 Phase 3 RCT로 뒷받침됩니다.</div><a href="https://pubmed.ncbi.nlm.nih.gov/41881047/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 41881047</a></div></details></div>
-</details>
-<!-- /SECTION:2026-06-10 -->
 
 <!-- SECTION:2026-06-10 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
+<details open class="rounded-xl overflow-hidden shadow-sm border-2 border-gray-900 bg-white">
+  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">past</span>
-        <span class="font-bold text-blue-900 text-sm">2026-06-10</span>
-        <span class="text-slate-400 text-xs">추천 3편</span>
-        <span class="text-slate-300 text-[10px] ml-auto">생성 2026. 06. 10. 10:11</span>
+      <div class="flex items-center gap-2 mb-2.5">
+        <span class="bg-gray-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">TODAY</span>
+        <span class="font-bold text-gray-900 text-sm">2026-06-10</span>
+        <span class="text-gray-400 text-xs">· 3편</span>
+        <span class="text-gray-300 text-[10px] ml-auto">생성 2026. 06. 10. 11:10</span>
       </div>
-      
-        <div class="text-xs text-slate-600 mt-1">&#x2460; Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-        <div class="text-[10px] text-slate-400 pl-3">Techniques in vascular and interventional radiology · 2026-Jun · PMID 42230073</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2461; The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42228369</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2462; Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42223936</div>
+      <div class="space-y-1">
+        <div class="text-xs font-medium text-gray-700">① Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</div>
+        <div class="text-[10px] text-gray-400 pl-3">N Engl J Med · 2026-May · PMID 42150044</div>
+        <div class="text-xs font-medium text-gray-700 mt-1">② High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure (SOHO Trial)</div>
+        <div class="text-[10px] text-gray-400 pl-3">N Engl J Med · 2026-Jun · PMID 41841715</div>
+        <div class="text-xs font-medium text-gray-700 mt-1">③ Procalcitonin + NEWS2 vs Usual Care for Sepsis ID in Emergency Department (PRONTO Trial)</div>
+        <div class="text-[10px] text-gray-400 pl-3">Lancet Respir Med · 2026-May · PMID 41881047</div>
+      </div>
     </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
   </summary>
-  <div class="slide-in border-t border-blue-100 divide-y divide-slate-100">
-    
+  <div class="slide-in border-t-2 border-gray-900 divide-y divide-gray-100">
+
+    <!-- 논문 01 -->
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-900 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-          <div class="text-[10px] text-slate-400">Singhal S, Zhang K 외 · Techniques in vascular and interventional radiology · 2026-Jun</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Sperry J, Guyette F et al. · N Engl J Med · 2026-May</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">6</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">8</span>
+          <span class="text-[10px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자에서, Vascular Interventional Radiologists (VIRs)가 환자 예후를 최적화하기 위해 적용해야 할 Damage Control Resuscitation (DCR), 수혈 원칙, 항응고 역전에 관한 근거 중심 전략은 무엇인가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">VIRs가 관리하는 급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자; 구체적인 환자 수, 연령 범위, 날짜 범위는 보고되지 않음 — abstract만 이용 가능한 리뷰/교육 논문</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">혈액 제제 비율을 포함한 balanced resuscitation 등 수혈 원칙, acute traumatic coagulopathy 관리, 항응고 역전 가이드라인을 포함하는 근거 중심 Damage Control Resuscitation (DCR) 전략의 VIR 시술 중 적용</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">명시적 대조군 없음; 논문은 DCR 기반 관리와 비구조적 또는 비근거 중심 소생 접근법을 암묵적으로 비교함</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">급성 출혈 및 hemorrhagic shock에서의 치료 결과(생리적 안정화 및 소생 endpoints 포함); 구체적인 effect size, p-value, 결과 통계는 abstract에 보고되지 않음 — 교육/리뷰 논문</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>급성 출혈을 관리하는 VIRs는 혈액 제제 balanced ratio 수혈, acute traumatic coagulopathy 인식 및 교정, 항응고 역전을 포함한 Damage Control Resuscitation 원칙에 능숙해야 하며, 단순 시술자가 아닌 critical care 임상의로서 기능해야 함. Hemorrhagic shock 생리 현상을 조기에 파악하고 DCR 가이드라인을 준수함으로써 지혈 중재 전후 소생 결과를 최적화할 수 있음. EM 및 CCM 임상의는 VIR 팀과 긴밀히 협력해야 하며, VIR은 다학제 critical care 환경에서 출혈 관리의 질환 전문가로서 역할이 점차 확대되고 있음.
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
+        <div class="border-l-4 border-gray-300 pl-3 py-1 text-[11px] text-gray-500 italic mb-3">외상 출혈에서 전혈 수혈, 성분수혈 대비 30일 사망률 차이 없음</div>
+        <table class="w-full border-collapse text-[11px]">
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 w-5 font-bold letter-p">P</td><td class="py-1.5 px-2.5 text-gray-700">병원 전 단계 외상성 출혈 환자 1,020명 (44개 항공의료팀)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-i">I</td><td class="py-1.5 px-2.5 text-gray-700">Type O 저역가 전혈(whole blood) 최대 2단위 수혈</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-c">C</td><td class="py-1.5 px-2.5 text-gray-700">표준 성분수혈 (혈장, 적혈구 등)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-o">O</td><td class="py-1.5 px-2.5 text-gray-700">30일 사망률: 전혈 25.9% vs 성분수혈 20.5% (OR 1.24; 95% CI 0.87–1.76; P=0.24) — 차이 없음</td></tr>
+        </table>
+        <div class="mt-3 bg-gray-900 text-gray-100 rounded-lg px-3 py-2.5 text-[11px]">
+          <b class="text-white block mb-1">💡 임상 포인트</b>
+          병원 전 전혈 수혈이 성분수혈보다 우월하지 않음이 대규모 RCT로 확인됐습니다. 전혈 도입의 물류·비용 부담이 있는 HEMS 팀은 현행 성분수혈 프로토콜 유지가 합리적입니다. 향후 병원 전 수혈 전략에서 전혈의 역할 재정의가 필요합니다.
         </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42230073</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42150044/" target="_blank" class="inline-block mt-2 text-[10px] text-gray-500 hover:text-gray-900 underline">PubMed 42150044 →</a>
       </div>
     </details>
+
+    <!-- 논문 02 -->
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-          <div class="text-[10px] text-slate-400">He S, Zhang JZ 외 · JAMA network open · 2026-Jun-01</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure (SOHO Trial)</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Frat JP et al. · N Engl J Med · 2026-Jun</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.5</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">7</span>
+          <span class="text-[10px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">홍콩의 전체 입원 환경에서 추정 감염이 있는 생후 28일 이상 18세 미만의 입원 소아 환자를 대상으로, Phoenix-8 sepsis criteria가 Phoenix-4, pSOFA, PELOD-2와 비교하여 전원인 병원 내 사망 예측 성능 및 일상적인 EHR 데이터 가용성 측면에서 어떠한 차이를 보이는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">2009년 4월 1일부터 2024년 3월 31일까지 홍콩 36개 공공 재정 지원 병원에 입원한, 추정 감염(index culture 2일 이내 새로운 항생제 투여 후 ≥4일 지속)이 있는 생후 28일 이상 18세 미만의 소아 입원 환자 140,633명 (중앙값 [IQR] 나이 4.0 [1.0–8.0]세; 남아 77,665명 [55.2%]); 신생아(&lt;28일), 입원 중 출생, 4차 전문병원 단독 입원 환자 제외; 동일 환자의 중복 입원 시 무작위 단일 에피소드 선택</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Index culture 날짜 기준 1 calendar day 이내에 산출된 Phoenix-8 severity score (변수 17개, 구성요소 8개); sepsis를 Phoenix-8 score ≥2로 정의 (n=7,547; 5.4% [95% CI, 5.2%–5.5%]); 비복잡 감염을 Phoenix-8 score &lt;2로 정의 (n=133,086; 94.6% [95% CI, 94.5%–94.8%]); 결측 데이터는 정상으로 간주하여 0점 부여</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Phoenix-4 (변수 11개, 구성요소 4개; score ≥2 기준), pSOFA (변수 9개, 구성요소 6개; score ≥2 기준), PELOD-2 (변수 10개, 구성요소 5개; AUROC 분석의 Youden index로 최적 threshold 도출) — 동일한 EHR 데이터셋(CDARS)을 활용하여 index culture 날짜 기준 1 calendar day 이내에 산출</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: AUPRC 및 AUROC로 평가한 전원인 병원 내 사망. Phoenix-8: AUPRC 0.27 (95% CI, 0.23–0.32), AUROC 0.91 (95% CI, 0.89–0.93); Phoenix-4: AUPRC 0.23 (95% CI, 0.19–0.27), AUROC 0.90 (95% CI, 0.88–0.91); PELOD-2: AUPRC 0.29 (95% CI, 0.24–0.33), AUROC 0.89 (95% CI, 0.87–0.91); pSOFA: AUPRC 0.15 (95% CI, 0.12–0.19), AUROC 0.80 (95% CI, 0.78–0.83). Phoenix-8 sepsis 그룹 사망률: 4.5% (95% CI, 4.0%–5.0%; n=337) vs. 비복잡 감염 그룹 0.1% (95% CI, 0.1%–0.1%; n=114) (P&lt;.001). 2차 결과: EHR 데이터 평균 가용성 — pSOFA: 50.7% (95% CI, 50.6%–50.7%); Phoenix-8: 43.3% (95% CI, 43.2%–43.4%); PELOD-2: 38.7% (95% CI, 38.6%–38.7%); Phoenix-4: 28.6% (95% CI, 28.5%–28.7%). 하위그룹 분석: 입원 당일 community-acquired sepsis, hospital-acquired sepsis (index culture ≥입원 후 3일), 데이터 가용성 ≥50% 환자군, 결측 데이터 대체 분석 포함.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>Phoenix-8 criteria는 미국 외 고소득 아시아 의료 환경에서 PICU뿐만 아니라 일반 병동을 포함한 다양한 입원 환경에서 추정 감염 소아 환자의 사망률을 강력하게 예측하며(AUROC 0.91), 원래 도출 코호트를 넘어선 국제적 적용 가능성을 지지한다. 미국 외 의료 기관의 임상의와 의료 시스템은 Phoenix-8을 소아 sepsis 고위험군 식별에 신뢰 있게 활용할 수 있다. 다만, EHR 구현 시 전체 데이터 가용성이 43.3%에 불과하고 특히 point-of-care glucose 값이 임상 기록에는 존재하나 EHR에 구조화되지 않는 경우가 많아 데이터 수집 체계 개선이 필요하다.
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
+        <div class="border-l-4 border-gray-300 pl-3 py-1 text-[11px] text-gray-500 italic mb-3">급성 저산소 호흡부전에서 HFNC, 삽관률 감소시키나 28일 사망률 차이 없음</div>
+        <table class="w-full border-collapse text-[11px]">
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 w-5 font-bold letter-p">P</td><td class="py-1.5 px-2.5 text-gray-700">급성 저산소성 호흡부전 성인 1,110명 (프랑스 42개 ICU, PaO₂/FiO₂ ≤200)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-i">I</td><td class="py-1.5 px-2.5 text-gray-700">High-flow nasal cannula (HFNC) 산소요법</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-c">C</td><td class="py-1.5 px-2.5 text-gray-700">표준 산소요법 (conventional O₂)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-o">O</td><td class="py-1.5 px-2.5 text-gray-700">28일 사망률: 14.6% vs 14.6% (NS) · 삽관률: 42.4% vs 48.4% (P&lt;0.05)</td></tr>
+        </table>
+        <div class="mt-3 bg-gray-900 text-gray-100 rounded-lg px-3 py-2.5 text-[11px]">
+          <b class="text-white block mb-1">💡 임상 포인트</b>
+          HFNC는 삽관률을 유의하게 낮추지만 28일 사망률을 개선하지는 못했습니다. 삽관 회피가 중요한 임상 목표일 때 HFNC 1차 적용 근거가 강화되었습니다. 응급실·ICU 초기 호흡 지원에서 HFNC를 우선 고려하는 전략을 지지하는 근거입니다.
         </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42228369</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" class="inline-block mt-2 text-[10px] text-gray-500 hover:text-gray-900 underline">PubMed 41841715 →</a>
       </div>
     </details>
+
+    <!-- 논문 03 -->
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-400 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-          <div class="text-[10px] text-slate-400">Yoon CH, Sjöholm D 외 · JAMA network open · 2026-Jun-01</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Procalcitonin + NEWS2 vs Usual Care for Sepsis ID in Emergency Department (PRONTO Trial)</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Todd S, Euden J et al. · Lancet Respir Med · 2026-May</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">4</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">7</span>
+          <span class="text-[10px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">SENECA 데이터셋에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)이 동일한 비지도 학습 기반 consensus k-means clustering 방법론을 사용하여 유럽의 독립적인 다기관 응급실 코호트에서 재현되고 일반화될 수 있는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">유럽 3개 대학병원 응급실에 내원한 성인 환자(≥18세): 스웨덴 스톡홀름 Karolinska University Hospital (N=30,865; 평균 나이 68 [SD 16]세; 남성 59%; 2011년 1월 1일–2023년 9월 1일), 영국 옥스퍼드 Oxford University Hospitals (N=15,575; 평균 나이 71 [SD 18]세; 남성 58%; 2014년 2월 4일–2021년 6월 20일), 노르웨이 오슬로 Oslo University Hospital (N=1,806; 평균 나이 71 [SD 17]세; 남성 59%; 2019년 1월 4일–2023년 10월 9일). 포함 기준: 의심 감염(≥1건의 체액 배양 검사 + 전신 항생제 투여 기록) 및 장기 기능 장애(SOFA score ≥2), 모두 ED 입원 후 6시간 이내. 총 N=48,246 encounters.</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">29개(일부 변수 미확보 시 26개)의 EHR 기반 임상·검사실 변수를 사용하여 SENECA에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)의 다기관 외부 검증. consensus clustering with k-means (k=4 사전 지정) 사용; multiple imputation with chained equations (11개 imputed datasets, predictive mean matching) 적용; 각 imputed dataset당 resampling fraction 0.8로 20회 resampling 수행. 각 유럽 기관에서 독립적으로 site-specific centroids 도출 후, SENECA centroids를 적용(shortest Euclidean distance)하여 비교.</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">각 유럽 검증 기관에 적용된 SENECA 도출 phenotype centroids (원본 미국 기반 도출 코호트, N=20,189, 남성 50%, Elixhauser comorbidity index 평균 1.8 [SD 1.2])와 유럽 기관 간 독립 도출 phenotype centroids의 교차 비교 (Stockholm vs. Oxford vs. Oslo).</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: SENECA 도출 표현형과 기관별 표현형 간 일치도 — Cohen κ (SENECA vs. Stockholm: κ=0.32; SENECA vs. Oslo: κ=0.37; SENECA vs. Oxford: κ=0.40) 및 Adjusted Rand Index (ARI; SENECA vs. Stockholm: ARI=0.21; SENECA vs. Oslo: ARI=0.27; SENECA vs. Oxford: ARI=0.26). 기관 간 교차 일치도 (Stockholm dataset 기준): Fleiss κ=0.47, 전체 기관 간 percentage agreement=41%; ARI Stockholm vs. Oslo=0.32, Stockholm vs. Oxford=0.57, Stockholm vs. SENECA=0.30. 모든 수치는 낮은~보통 수준의 일치도를 나타내며, SENECA 표현형이 독립적인 유럽 코호트에 일반화되지 않음을 시사.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>EHR 데이터의 비지도 k-means clustering으로 도출된 4가지 SENECA 임상 패혈증 표현형(α, β, γ, δ)은 3개 대형 유럽 응급실 코호트(총 N=48,246)에서 Cohen κ 0.32–0.40, Adjusted Rand Index 0.21–0.27에 그쳐 일반화 가능성이 낮음을 확인하였다. 임상의와 임상시험 연구자들은 보다 견고하고 일반화 가능한 패혈증 subtyping 체계가 개발될 때까지, 미국 외 환경에서 이 표현형을 환자 층화, enrichment 전략 또는 치료 배정에 적용해서는 안 된다. 향후 연구는 확률적 불안정성(stochasticity)을 줄이고 국제적 환경 간 환자 구성, 동반 질환 부담 및 의료 시스템 관행의 차이를 더 잘 반영하는 대안적 clustering 접근법을 탐색해야 한다.
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
+        <div class="border-l-4 border-gray-300 pl-3 py-1 text-[11px] text-gray-500 italic mb-3">응급실 PCT+NEWS2 알고리즘이 항생제 타이밍 불변에도 28일 사망률 감소</div>
+        <table class="w-full border-collapse text-[11px]">
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 w-5 font-bold letter-p">P</td><td class="py-1.5 px-2.5 text-gray-700">영국·웨일스 20개 응급실 패혈증 의심 성인 7,667명</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-i">I</td><td class="py-1.5 px-2.5 text-gray-700">Procalcitonin + NEWS2 기반 패혈증 의사결정 알고리즘 제공</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-c">C</td><td class="py-1.5 px-2.5 text-gray-700">NEWS2만 이용한 표준 치료</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-o">O</td><td class="py-1.5 px-2.5 text-gray-700">IV 항생제 3시간 내 투여율 변화 없음; 28일 사망률 유의미하게 감소</td></tr>
+        </table>
+        <div class="mt-3 bg-gray-900 text-gray-100 rounded-lg px-3 py-2.5 text-[11px]">
+          <b class="text-white block mb-1">💡 임상 포인트</b>
+          PCT+NEWS2 알고리즘은 항생제 투여 타이밍을 바꾸지 않았으나 28일 사망률을 낮추는 효과를 보였습니다. 감염 및 비감염 환자 모두에서 사망률 개선이 나타나 진단 정밀도 향상이 치료 전반에 긍정적 영향을 미친 것으로 추정됩니다. 응급실 내 PCT 검사 활용의 임상적 근거가 대규모 Phase 3 RCT로 뒷받침됩니다.
         </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42223936</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41881047/" target="_blank" class="inline-block mt-2 text-[10px] text-gray-500 hover:text-gray-900 underline">PubMed 41881047 →</a>
       </div>
     </details>
+
   </div>
 </details>
 <!-- /SECTION:2026-06-10 -->
 
-<!-- SECTION:2026-06-10 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">past</span>
-        <span class="font-bold text-blue-900 text-sm">2026-06-10</span>
-        <span class="text-slate-400 text-xs">추천 5편</span>
-        <span class="text-slate-300 text-[10px] ml-auto">생성 2026. 06. 10. 10:07</span>
-      </div>
-      
-        <div class="text-xs text-slate-600 mt-1">&#x2460; Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-        <div class="text-[10px] text-slate-400 pl-3">Techniques in vascular and interventional radiology · 2026-Jun · PMID 42230073</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2461; The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42228369</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2462; Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42223936</div>
-    </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-  </summary>
-  <div class="slide-in border-t border-blue-100 divide-y divide-slate-100">
-    
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-          <div class="text-[10px] text-slate-400">Singhal S, Zhang K 외 · Techniques in vascular and interventional radiology · 2026-Jun</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">6</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자에서, Vascular Interventional Radiologists (VIRs)가 환자 예후를 최적화하기 위해 적용해야 할 Damage Control Resuscitation (DCR), 수혈 원칙, 항응고 역전에 관한 근거 중심 전략은 무엇인가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">VIRs가 관리하는 급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자; 구체적인 환자 수, 연령 범위, 날짜 범위는 보고되지 않음 — abstract만 이용 가능한 리뷰/교육 논문</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">혈액 제제 비율을 포함한 balanced resuscitation 등 수혈 원칙, acute traumatic coagulopathy 관리, 항응고 역전 가이드라인을 포함하는 근거 중심 Damage Control Resuscitation (DCR) 전략의 VIR 시술 중 적용</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">명시적 대조군 없음; 논문은 DCR 기반 관리와 비구조적 또는 비근거 중심 소생 접근법을 암묵적으로 비교함</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">급성 출혈 및 hemorrhagic shock에서의 치료 결과(생리적 안정화 및 소생 endpoints 포함); 구체적인 effect size, p-value, 결과 통계는 abstract에 보고되지 않음 — 교육/리뷰 논문</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>급성 출혈을 관리하는 VIRs는 혈액 제제 balanced ratio 수혈, acute traumatic coagulopathy 인식 및 교정, 항응고 역전을 포함한 Damage Control Resuscitation 원칙에 능숙해야 하며, 단순 시술자가 아닌 critical care 임상의로서 기능해야 함. Hemorrhagic shock 생리 현상을 조기에 파악하고 DCR 가이드라인을 준수함으로써 지혈 중재 전후 소생 결과를 최적화할 수 있음. EM 및 CCM 임상의는 VIR 팀과 긴밀히 협력해야 하며, VIR은 다학제 critical care 환경에서 출혈 관리의 질환 전문가로서 역할이 점차 확대되고 있음.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42230073</a>
-      </div>
-    </details>
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-          <div class="text-[10px] text-slate-400">He S, Zhang JZ 외 · JAMA network open · 2026-Jun-01</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.5</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">홍콩의 전체 입원 환경에서 추정 감염이 있는 생후 28일 이상 18세 미만의 입원 소아 환자를 대상으로, Phoenix-8 sepsis criteria가 Phoenix-4, pSOFA, PELOD-2와 비교하여 전원인 병원 내 사망 예측 성능 및 일상적인 EHR 데이터 가용성 측면에서 어떠한 차이를 보이는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">2009년 4월 1일부터 2024년 3월 31일까지 홍콩 36개 공공 재정 지원 병원에 입원한, 추정 감염(index culture 2일 이내 새로운 항생제 투여 후 ≥4일 지속)이 있는 생후 28일 이상 18세 미만의 소아 입원 환자 140,633명 (중앙값 [IQR] 나이 4.0 [1.0–8.0]세; 남아 77,665명 [55.2%]); 신생아(&lt;28일), 입원 중 출생, 4차 전문병원 단독 입원 환자 제외; 동일 환자의 중복 입원 시 무작위 단일 에피소드 선택</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Index culture 날짜 기준 1 calendar day 이내에 산출된 Phoenix-8 severity score (변수 17개, 구성요소 8개); sepsis를 Phoenix-8 score ≥2로 정의 (n=7,547; 5.4% [95% CI, 5.2%–5.5%]); 비복잡 감염을 Phoenix-8 score &lt;2로 정의 (n=133,086; 94.6% [95% CI, 94.5%–94.8%]); 결측 데이터는 정상으로 간주하여 0점 부여</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Phoenix-4 (변수 11개, 구성요소 4개; score ≥2 기준), pSOFA (변수 9개, 구성요소 6개; score ≥2 기준), PELOD-2 (변수 10개, 구성요소 5개; AUROC 분석의 Youden index로 최적 threshold 도출) — 동일한 EHR 데이터셋(CDARS)을 활용하여 index culture 날짜 기준 1 calendar day 이내에 산출</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: AUPRC 및 AUROC로 평가한 전원인 병원 내 사망. Phoenix-8: AUPRC 0.27 (95% CI, 0.23–0.32), AUROC 0.91 (95% CI, 0.89–0.93); Phoenix-4: AUPRC 0.23 (95% CI, 0.19–0.27), AUROC 0.90 (95% CI, 0.88–0.91); PELOD-2: AUPRC 0.29 (95% CI, 0.24–0.33), AUROC 0.89 (95% CI, 0.87–0.91); pSOFA: AUPRC 0.15 (95% CI, 0.12–0.19), AUROC 0.80 (95% CI, 0.78–0.83). Phoenix-8 sepsis 그룹 사망률: 4.5% (95% CI, 4.0%–5.0%; n=337) vs. 비복잡 감염 그룹 0.1% (95% CI, 0.1%–0.1%; n=114) (P&lt;.001). 2차 결과: EHR 데이터 평균 가용성 — pSOFA: 50.7% (95% CI, 50.6%–50.7%); Phoenix-8: 43.3% (95% CI, 43.2%–43.4%); PELOD-2: 38.7% (95% CI, 38.6%–38.7%); Phoenix-4: 28.6% (95% CI, 28.5%–28.7%). 하위그룹 분석: 입원 당일 community-acquired sepsis, hospital-acquired sepsis (index culture ≥입원 후 3일), 데이터 가용성 ≥50% 환자군, 결측 데이터 대체 분석 포함.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>Phoenix-8 criteria는 미국 외 고소득 아시아 의료 환경에서 PICU뿐만 아니라 일반 병동을 포함한 다양한 입원 환경에서 추정 감염 소아 환자의 사망률을 강력하게 예측하며(AUROC 0.91), 원래 도출 코호트를 넘어선 국제적 적용 가능성을 지지한다. 미국 외 의료 기관의 임상의와 의료 시스템은 Phoenix-8을 소아 sepsis 고위험군 식별에 신뢰 있게 활용할 수 있다. 다만, EHR 구현 시 전체 데이터 가용성이 43.3%에 불과하고 특히 point-of-care glucose 값이 임상 기록에는 존재하나 EHR에 구조화되지 않는 경우가 많아 데이터 수집 체계 개선이 필요하다.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42228369</a>
-      </div>
-    </details>
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-          <div class="text-[10px] text-slate-400">Yoon CH, Sjöholm D 외 · JAMA network open · 2026-Jun-01</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">4</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">SENECA 데이터셋에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)이 동일한 비지도 학습 기반 consensus k-means clustering 방법론을 사용하여 유럽의 독립적인 다기관 응급실 코호트에서 재현되고 일반화될 수 있는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">유럽 3개 대학병원 응급실에 내원한 성인 환자(≥18세): 스웨덴 스톡홀름 Karolinska University Hospital (N=30,865; 평균 나이 68 [SD 16]세; 남성 59%; 2011년 1월 1일–2023년 9월 1일), 영국 옥스퍼드 Oxford University Hospitals (N=15,575; 평균 나이 71 [SD 18]세; 남성 58%; 2014년 2월 4일–2021년 6월 20일), 노르웨이 오슬로 Oslo University Hospital (N=1,806; 평균 나이 71 [SD 17]세; 남성 59%; 2019년 1월 4일–2023년 10월 9일). 포함 기준: 의심 감염(≥1건의 체액 배양 검사 + 전신 항생제 투여 기록) 및 장기 기능 장애(SOFA score ≥2), 모두 ED 입원 후 6시간 이내. 총 N=48,246 encounters.</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">29개(일부 변수 미확보 시 26개)의 EHR 기반 임상·검사실 변수를 사용하여 SENECA에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)의 다기관 외부 검증. consensus clustering with k-means (k=4 사전 지정) 사용; multiple imputation with chained equations (11개 imputed datasets, predictive mean matching) 적용; 각 imputed dataset당 resampling fraction 0.8로 20회 resampling 수행. 각 유럽 기관에서 독립적으로 site-specific centroids 도출 후, SENECA centroids를 적용(shortest Euclidean distance)하여 비교.</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">각 유럽 검증 기관에 적용된 SENECA 도출 phenotype centroids (원본 미국 기반 도출 코호트, N=20,189, 남성 50%, Elixhauser comorbidity index 평균 1.8 [SD 1.2])와 유럽 기관 간 독립 도출 phenotype centroids의 교차 비교 (Stockholm vs. Oxford vs. Oslo).</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: SENECA 도출 표현형과 기관별 표현형 간 일치도 — Cohen κ (SENECA vs. Stockholm: κ=0.32; SENECA vs. Oslo: κ=0.37; SENECA vs. Oxford: κ=0.40) 및 Adjusted Rand Index (ARI; SENECA vs. Stockholm: ARI=0.21; SENECA vs. Oslo: ARI=0.27; SENECA vs. Oxford: ARI=0.26). 기관 간 교차 일치도 (Stockholm dataset 기준): Fleiss κ=0.47, 전체 기관 간 percentage agreement=41%; ARI Stockholm vs. Oslo=0.32, Stockholm vs. Oxford=0.57, Stockholm vs. SENECA=0.30. 모든 수치는 낮은~보통 수준의 일치도를 나타내며, SENECA 표현형이 독립적인 유럽 코호트에 일반화되지 않음을 시사.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>EHR 데이터의 비지도 k-means clustering으로 도출된 4가지 SENECA 임상 패혈증 표현형(α, β, γ, δ)은 3개 대형 유럽 응급실 코호트(총 N=48,246)에서 Cohen κ 0.32–0.40, Adjusted Rand Index 0.21–0.27에 그쳐 일반화 가능성이 낮음을 확인하였다. 임상의와 임상시험 연구자들은 보다 견고하고 일반화 가능한 패혈증 subtyping 체계가 개발될 때까지, 미국 외 환경에서 이 표현형을 환자 층화, enrichment 전략 또는 치료 배정에 적용해서는 안 된다. 향후 연구는 확률적 불안정성(stochasticity)을 줄이고 국제적 환경 간 환자 구성, 동반 질환 부담 및 의료 시스템 관행의 차이를 더 잘 반영하는 대안적 clustering 접근법을 탐색해야 한다.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42223936</a>
-      </div>
-    </details>
-  </div>
-</details>
-<!-- /SECTION:2026-06-10 -->
 <!-- SECTION:2026-06-09 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
+<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
+  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">past</span>
-        <span class="font-bold text-blue-900 text-sm">2026-06-09</span>
-        <span class="text-slate-400 text-xs">추천 3편</span>
-        <span class="text-slate-300 text-[10px] ml-auto">생성 2026. 06. 09. 15:56</span>
+      <div class="flex items-center gap-2 mb-2.5">
+        <span class="font-bold text-gray-700 text-sm">2026-06-09</span>
+        <span class="text-gray-400 text-xs">· 3편</span>
+        <span class="text-gray-300 text-[10px] ml-auto">생성 2026. 06. 09. 15:56</span>
       </div>
-      
-        <div class="text-xs text-slate-600 mt-1">&#x2460; Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-        <div class="text-[10px] text-slate-400 pl-3">Techniques in vascular and interventional radiology · 2026-Jun · PMID 42230073</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2461; The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42228369</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2462; Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42223936</div>
+      <div class="space-y-1">
+        <div class="text-xs text-gray-600">① Management of Acute Hemorrhage and Damage-Control Resuscitation</div>
+        <div class="text-[10px] text-gray-400 pl-3">Techniques in Vascular and Interventional Radiology · 2026-Jun · PMID 42230073</div>
+        <div class="text-xs text-gray-600 mt-1">② The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</div>
+        <div class="text-[10px] text-gray-400 pl-3">JAMA Network Open · 2026-Jun · PMID 42228369</div>
+        <div class="text-xs text-gray-600 mt-1">③ Multicenter Validation of Clinical Sepsis Phenotypes (SENECA)</div>
+        <div class="text-[10px] text-gray-400 pl-3">JAMA Network Open · 2026-Jun · PMID 42223936</div>
+      </div>
     </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
   </summary>
-  <div class="slide-in border-t border-blue-100 divide-y divide-slate-100">
-    
+  <div class="slide-in border-t border-gray-200 divide-y divide-gray-100">
+
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-900 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-          <div class="text-[10px] text-slate-400">Singhal S, Zhang K 외 · Techniques in vascular and interventional radiology · 2026-Jun</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Singhal S 외 · Techniques in Vascular and Interventional Radiology · 2026-Jun</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">6</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">6.0</span>
+          <span class="text-[10px] text-gray-400 border border-gray-300 px-1.5 py-0.5 rounded-full">Review</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자에서, Vascular Interventional Radiologists (VIRs)가 환자 예후를 최적화하기 위해 적용해야 할 Damage Control Resuscitation (DCR), 수혈 원칙, 항응고 역전에 관한 근거 중심 전략은 무엇인가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">VIRs가 관리하는 급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자; 구체적인 환자 수, 연령 범위, 날짜 범위는 보고되지 않음 — abstract만 이용 가능한 리뷰/교육 논문</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">혈액 제제 비율을 포함한 balanced resuscitation 등 수혈 원칙, acute traumatic coagulopathy 관리, 항응고 역전 가이드라인을 포함하는 근거 중심 Damage Control Resuscitation (DCR) 전략의 VIR 시술 중 적용</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">명시적 대조군 없음; 논문은 DCR 기반 관리와 비구조적 또는 비근거 중심 소생 접근법을 암묵적으로 비교함</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">급성 출혈 및 hemorrhagic shock에서의 치료 결과(생리적 안정화 및 소생 endpoints 포함); 구체적인 effect size, p-value, 결과 통계는 abstract에 보고되지 않음 — 교육/리뷰 논문</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>급성 출혈을 관리하는 VIRs는 혈액 제제 balanced ratio 수혈, acute traumatic coagulopathy 인식 및 교정, 항응고 역전을 포함한 Damage Control Resuscitation 원칙에 능숙해야 하며, 단순 시술자가 아닌 critical care 임상의로서 기능해야 함. Hemorrhagic shock 생리 현상을 조기에 파악하고 DCR 가이드라인을 준수함으로써 지혈 중재 전후 소생 결과를 최적화할 수 있음. EM 및 CCM 임상의는 VIR 팀과 긴밀히 협력해야 하며, VIR은 다학제 critical care 환경에서 출혈 관리의 질환 전문가로서 역할이 점차 확대되고 있음.
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
+        <div class="border-l-4 border-gray-300 pl-3 py-1 text-[11px] text-gray-500 italic mb-3">VIR 의사가 급성 출혈·출혈성 쇼크 환자 관리 시 적용해야 할 근거 기반 DCR 원칙은?</div>
+        <table class="w-full border-collapse text-[11px]">
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 w-5 font-bold letter-p">P</td><td class="py-1.5 px-2.5 text-gray-700">급성·중증 출혈·출혈성 쇼크로 VIR 시술을 받는 환자 (서술적 종설, 표본 크기 없음)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-i">I</td><td class="py-1.5 px-2.5 text-gray-700">근거 중심 DCR — ATC 병태생리 관리, 균형 수혈 원칙, 항응고 역전 가이드라인</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-c">C</td><td class="py-1.5 px-2.5 text-gray-700">비프로토콜화된 전통적 소생법과 암묵적 비교 (공식 대조군 없음)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-o">O</td><td class="py-1.5 px-2.5 text-gray-700">출혈 조절 최적화, ATC 예방·교정, 생존율 향상 (정량 데이터 없음)</td></tr>
+        </table>
+        <div class="mt-3 bg-gray-900 text-gray-100 rounded-lg px-3 py-2.5 text-[11px]">
+          <b class="text-white block mb-1">💡 임상 포인트</b>
+          VIR 의사는 단순 시술자가 아닌 중환자 치료 협력자로서 DCR 원칙·ATC 교정·항응고 역전에 숙달해야 한다.
         </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42230073</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-gray-500 hover:text-gray-900 underline">PubMed 42230073 →</a>
       </div>
     </details>
+
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-          <div class="text-[10px] text-slate-400">He S, Zhang JZ 외 · JAMA network open · 2026-Jun-01</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">He S, Zhang JZ 외 · JAMA Network Open · 2026-Jun</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.5</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">7.5</span>
+          <span class="text-[10px] border border-gray-400 text-gray-600 px-1.5 py-0.5 rounded-full">Cohort</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">홍콩의 전체 입원 환경에서 추정 감염이 있는 생후 28일 이상 18세 미만의 입원 소아 환자를 대상으로, Phoenix-8 sepsis criteria가 Phoenix-4, pSOFA, PELOD-2와 비교하여 전원인 병원 내 사망 예측 성능 및 일상적인 EHR 데이터 가용성 측면에서 어떠한 차이를 보이는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">2009년 4월 1일부터 2024년 3월 31일까지 홍콩 36개 공공 재정 지원 병원에 입원한, 추정 감염(index culture 2일 이내 새로운 항생제 투여 후 ≥4일 지속)이 있는 생후 28일 이상 18세 미만의 소아 입원 환자 140,633명 (중앙값 [IQR] 나이 4.0 [1.0–8.0]세; 남아 77,665명 [55.2%]); 신생아(&lt;28일), 입원 중 출생, 4차 전문병원 단독 입원 환자 제외; 동일 환자의 중복 입원 시 무작위 단일 에피소드 선택</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Index culture 날짜 기준 1 calendar day 이내에 산출된 Phoenix-8 severity score (변수 17개, 구성요소 8개); sepsis를 Phoenix-8 score ≥2로 정의 (n=7,547; 5.4% [95% CI, 5.2%–5.5%]); 비복잡 감염을 Phoenix-8 score &lt;2로 정의 (n=133,086; 94.6% [95% CI, 94.5%–94.8%]); 결측 데이터는 정상으로 간주하여 0점 부여</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Phoenix-4 (변수 11개, 구성요소 4개; score ≥2 기준), pSOFA (변수 9개, 구성요소 6개; score ≥2 기준), PELOD-2 (변수 10개, 구성요소 5개; AUROC 분석의 Youden index로 최적 threshold 도출) — 동일한 EHR 데이터셋(CDARS)을 활용하여 index culture 날짜 기준 1 calendar day 이내에 산출</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: AUPRC 및 AUROC로 평가한 전원인 병원 내 사망. Phoenix-8: AUPRC 0.27 (95% CI, 0.23–0.32), AUROC 0.91 (95% CI, 0.89–0.93); Phoenix-4: AUPRC 0.23 (95% CI, 0.19–0.27), AUROC 0.90 (95% CI, 0.88–0.91); PELOD-2: AUPRC 0.29 (95% CI, 0.24–0.33), AUROC 0.89 (95% CI, 0.87–0.91); pSOFA: AUPRC 0.15 (95% CI, 0.12–0.19), AUROC 0.80 (95% CI, 0.78–0.83). Phoenix-8 sepsis 그룹 사망률: 4.5% (95% CI, 4.0%–5.0%; n=337) vs. 비복잡 감염 그룹 0.1% (95% CI, 0.1%–0.1%; n=114) (P&lt;.001). 2차 결과: EHR 데이터 평균 가용성 — pSOFA: 50.7% (95% CI, 50.6%–50.7%); Phoenix-8: 43.3% (95% CI, 43.2%–43.4%); PELOD-2: 38.7% (95% CI, 38.6%–38.7%); Phoenix-4: 28.6% (95% CI, 28.5%–28.7%). 하위그룹 분석: 입원 당일 community-acquired sepsis, hospital-acquired sepsis (index culture ≥입원 후 3일), 데이터 가용성 ≥50% 환자군, 결측 데이터 대체 분석 포함.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>Phoenix-8 criteria는 미국 외 고소득 아시아 의료 환경에서 PICU뿐만 아니라 일반 병동을 포함한 다양한 입원 환경에서 추정 감염 소아 환자의 사망률을 강력하게 예측하며(AUROC 0.91), 원래 도출 코호트를 넘어선 국제적 적용 가능성을 지지한다. 미국 외 의료 기관의 임상의와 의료 시스템은 Phoenix-8을 소아 sepsis 고위험군 식별에 신뢰 있게 활용할 수 있다. 다만, EHR 구현 시 전체 데이터 가용성이 43.3%에 불과하고 특히 point-of-care glucose 값이 임상 기록에는 존재하나 EHR에 구조화되지 않는 경우가 많아 데이터 수집 체계 개선이 필요하다.
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
+        <div class="border-l-4 border-gray-300 pl-3 py-1 text-[11px] text-gray-500 italic mb-3">홍콩 입원 소아(28일–18세)에서 Phoenix-8 기준이 pSOFA, PELOD-2, Phoenix-4보다 사망률 예측에 우수한가?</div>
+        <table class="w-full border-collapse text-[11px]">
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 w-5 font-bold letter-p">P</td><td class="py-1.5 px-2.5 text-gray-700">추정 감염 소아 140,633명 (홍콩 36개 병원, 2009–2024; 중앙값 4.0세)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-i">I</td><td class="py-1.5 px-2.5 text-gray-700">Phoenix-8 기준 (score ≥2 = 패혈증; 17변수, 8구성요소)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-c">C</td><td class="py-1.5 px-2.5 text-gray-700">Phoenix-4, pSOFA, PELOD-2</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-o">O</td><td class="py-1.5 px-2.5 text-gray-700"><b>Phoenix-8 AUROC 0.91</b> (95% CI 0.89–0.93) · pSOFA 0.80 · 패혈증 5.4% · 사망률 4.5% vs 0.1% (P&lt;0.001)</td></tr>
+        </table>
+        <div class="mt-3 bg-gray-900 text-gray-100 rounded-lg px-3 py-2.5 text-[11px]">
+          <b class="text-white block mb-1">💡 임상 포인트</b>
+          Phoenix-8은 PICU 외 일반 소아 병동 포함 전체 스펙트럼에서 사망 변별력 우수. 미국 외 환경에서도 일반화 가능성 지지.
         </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42228369</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-gray-500 hover:text-gray-900 underline">PubMed 42228369 →</a>
       </div>
     </details>
+
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-400 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-          <div class="text-[10px] text-slate-400">Yoon CH, Sjöholm D 외 · JAMA network open · 2026-Jun-01</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes (SENECA)</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Yoon CH, Sjöholm D 외 · JAMA Network Open · 2026-Jun</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">4</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">5.0</span>
+          <span class="text-[10px] text-gray-400 border border-gray-300 px-1.5 py-0.5 rounded-full">Validation</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">SENECA 데이터셋에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)이 동일한 비지도 학습 기반 consensus k-means clustering 방법론을 사용하여 유럽의 독립적인 다기관 응급실 코호트에서 재현되고 일반화될 수 있는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">유럽 3개 대학병원 응급실에 내원한 성인 환자(≥18세): 스웨덴 스톡홀름 Karolinska University Hospital (N=30,865; 평균 나이 68 [SD 16]세; 남성 59%; 2011년 1월 1일–2023년 9월 1일), 영국 옥스퍼드 Oxford University Hospitals (N=15,575; 평균 나이 71 [SD 18]세; 남성 58%; 2014년 2월 4일–2021년 6월 20일), 노르웨이 오슬로 Oslo University Hospital (N=1,806; 평균 나이 71 [SD 17]세; 남성 59%; 2019년 1월 4일–2023년 10월 9일). 포함 기준: 의심 감염(≥1건의 체액 배양 검사 + 전신 항생제 투여 기록) 및 장기 기능 장애(SOFA score ≥2), 모두 ED 입원 후 6시간 이내. 총 N=48,246 encounters.</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">29개(일부 변수 미확보 시 26개)의 EHR 기반 임상·검사실 변수를 사용하여 SENECA에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)의 다기관 외부 검증. consensus clustering with k-means (k=4 사전 지정) 사용; multiple imputation with chained equations (11개 imputed datasets, predictive mean matching) 적용; 각 imputed dataset당 resampling fraction 0.8로 20회 resampling 수행. 각 유럽 기관에서 독립적으로 site-specific centroids 도출 후, SENECA centroids를 적용(shortest Euclidean distance)하여 비교.</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">각 유럽 검증 기관에 적용된 SENECA 도출 phenotype centroids (원본 미국 기반 도출 코호트, N=20,189, 남성 50%, Elixhauser comorbidity index 평균 1.8 [SD 1.2])와 유럽 기관 간 독립 도출 phenotype centroids의 교차 비교 (Stockholm vs. Oxford vs. Oslo).</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: SENECA 도출 표현형과 기관별 표현형 간 일치도 — Cohen κ (SENECA vs. Stockholm: κ=0.32; SENECA vs. Oslo: κ=0.37; SENECA vs. Oxford: κ=0.40) 및 Adjusted Rand Index (ARI; SENECA vs. Stockholm: ARI=0.21; SENECA vs. Oslo: ARI=0.27; SENECA vs. Oxford: ARI=0.26). 기관 간 교차 일치도 (Stockholm dataset 기준): Fleiss κ=0.47, 전체 기관 간 percentage agreement=41%; ARI Stockholm vs. Oslo=0.32, Stockholm vs. Oxford=0.57, Stockholm vs. SENECA=0.30. 모든 수치는 낮은~보통 수준의 일치도를 나타내며, SENECA 표현형이 독립적인 유럽 코호트에 일반화되지 않음을 시사.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>EHR 데이터의 비지도 k-means clustering으로 도출된 4가지 SENECA 임상 패혈증 표현형(α, β, γ, δ)은 3개 대형 유럽 응급실 코호트(총 N=48,246)에서 Cohen κ 0.32–0.40, Adjusted Rand Index 0.21–0.27에 그쳐 일반화 가능성이 낮음을 확인하였다. 임상의와 임상시험 연구자들은 보다 견고하고 일반화 가능한 패혈증 subtyping 체계가 개발될 때까지, 미국 외 환경에서 이 표현형을 환자 층화, enrichment 전략 또는 치료 배정에 적용해서는 안 된다. 향후 연구는 확률적 불안정성(stochasticity)을 줄이고 국제적 환경 간 환자 구성, 동반 질환 부담 및 의료 시스템 관행의 차이를 더 잘 반영하는 대안적 clustering 접근법을 탐색해야 한다.
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
+        <div class="border-l-4 border-gray-300 pl-3 py-1 text-[11px] text-gray-500 italic mb-3">SENECA 4가지 패혈증 표현형(α,β,γ,δ)이 Stockholm·Oxford·Oslo 독립 코호트에서 재현 가능한가?</div>
+        <table class="w-full border-collapse text-[11px]">
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 w-5 font-bold letter-p">P</td><td class="py-1.5 px-2.5 text-gray-700">성인 ED 패혈증 48,246명 (Stockholm 30,865 + Oxford 15,575 + Oslo 1,806)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-i">I</td><td class="py-1.5 px-2.5 text-gray-700">k=4 k-means 합의 군집 분석 (29변수, 기관별 독립 시행, MICE 다중대체)</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-c">C</td><td class="py-1.5 px-2.5 text-gray-700">미국 SENECA 도출 코호트 표현형(α,β,γ,δ)과 교차 비교</td></tr>
+          <tr class="pico-tr"><td class="py-1.5 px-2.5 font-bold letter-o">O</td><td class="py-1.5 px-2.5 text-gray-700"><b>재현성 낮음</b> — Cohen κ 0.32–0.40 · ARI 0.21–0.27 · Fleiss κ 0.47 · 전체 일치율 41%</td></tr>
+        </table>
+        <div class="mt-3 bg-gray-900 text-gray-100 rounded-lg px-3 py-2.5 text-[11px]">
+          <b class="text-white block mb-1">💡 임상 포인트</b>
+          SENECA 표현형은 비미국 환경에서 로컬 검증 없이 적용 시 주의 필요.
         </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42223936</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-gray-500 hover:text-gray-900 underline">PubMed 42223936 →</a>
       </div>
     </details>
+
   </div>
 </details>
 <!-- /SECTION:2026-06-09 -->
+
 <!-- SECTION:2026-06-08 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
+<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
+  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">past</span>
-        <span class="font-bold text-blue-900 text-sm">2026-06-08</span>
-        <span class="text-slate-400 text-xs">추천 3편</span>
-        <span class="text-slate-300 text-[10px] ml-auto">생성 2026-06-08</span>
+      <div class="flex items-center gap-2 mb-2.5">
+        <span class="font-bold text-gray-700 text-sm">2026-06-08</span>
+        <span class="text-gray-400 text-xs">· 3편</span>
+        <span class="text-gray-300 text-[10px] ml-auto">생성 2026-06-08</span>
       </div>
-      
-        <div class="text-xs text-slate-600 mt-1">&#x2460; Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-        <div class="text-[10px] text-slate-400 pl-3">Techniques in vascular and interventional radiology · 2026-Jun · PMID 42230073</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2461; The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42228369</div>
-        <div class="text-xs text-slate-600 mt-1">&#x2462; Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA network open · 2026-Jun-01 · PMID 42223936</div>
+      <div class="space-y-1">
+        <div class="text-xs text-gray-600">① Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</div>
+        <div class="text-[10px] text-gray-400 pl-3">Frontiers in Immunology · 2026 · PMID 42238588</div>
+        <div class="text-xs text-gray-600 mt-1">② Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</div>
+        <div class="text-[10px] text-gray-400 pl-3">Critical Care Medicine · 2026-Jun · PMID 42219034</div>
+        <div class="text-xs text-gray-600 mt-1">③ Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</div>
+        <div class="text-[10px] text-gray-400 pl-3">Intensive Care Medicine · 2026-May · PMID 42201156</div>
+      </div>
     </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
   </summary>
-  <div class="slide-in border-t border-blue-100 divide-y divide-slate-100">
-    
+  <div class="slide-in border-t border-gray-200 divide-y divide-gray-100">
+
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-900 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation: Critical Care Concepts for Vascular Interventional Radiologists.</div>
-          <div class="text-[10px] text-slate-400">Singhal S, Zhang K 외 · Techniques in vascular and interventional radiology · 2026-Jun</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Wang C 외 · Frontiers in Immunology · 2026</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">6</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">7.0</span>
+          <span class="text-[10px] text-gray-400 border border-gray-300 px-1.5 py-0.5 rounded-full">Review</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자에서, Vascular Interventional Radiologists (VIRs)가 환자 예후를 최적화하기 위해 적용해야 할 Damage Control Resuscitation (DCR), 수혈 원칙, 항응고 역전에 관한 근거 중심 전략은 무엇인가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">VIRs가 관리하는 급성 또는 중증 출혈 및 hemorrhagic shock으로 내원한 중증 환자; 구체적인 환자 수, 연령 범위, 날짜 범위는 보고되지 않음 — abstract만 이용 가능한 리뷰/교육 논문</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">혈액 제제 비율을 포함한 balanced resuscitation 등 수혈 원칙, acute traumatic coagulopathy 관리, 항응고 역전 가이드라인을 포함하는 근거 중심 Damage Control Resuscitation (DCR) 전략의 VIR 시술 중 적용</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">명시적 대조군 없음; 논문은 DCR 기반 관리와 비구조적 또는 비근거 중심 소생 접근법을 암묵적으로 비교함</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c0)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">급성 출혈 및 hemorrhagic shock에서의 치료 결과(생리적 안정화 및 소생 endpoints 포함); 구체적인 effect size, p-value, 결과 통계는 abstract에 보고되지 않음 — 교육/리뷰 논문</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>급성 출혈을 관리하는 VIRs는 혈액 제제 balanced ratio 수혈, acute traumatic coagulopathy 인식 및 교정, 항응고 역전을 포함한 Damage Control Resuscitation 원칙에 능숙해야 하며, 단순 시술자가 아닌 critical care 임상의로서 기능해야 함. Hemorrhagic shock 생리 현상을 조기에 파악하고 DCR 가이드라인을 준수함으로써 지혈 중재 전후 소생 결과를 최적화할 수 있음. EM 및 CCM 임상의는 VIR 팀과 긴밀히 협력해야 하며, VIR은 다학제 critical care 환경에서 출혈 관리의 질환 전문가로서 역할이 점차 확대되고 있음.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42230073</a>
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60 text-[11px] text-gray-400 italic">
+        PICO 데이터는 파이프라인 최초 실행 시 자동으로 채워집니다.
       </div>
     </details>
+
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis.</div>
-          <div class="text-[10px] text-slate-400">He S, Zhang JZ 외 · JAMA network open · 2026-Jun-01</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Kim J 외 · Critical Care Medicine · 2026-Jun</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.5</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">7.5</span>
+          <span class="text-[10px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">Meta</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">홍콩의 전체 입원 환경에서 추정 감염이 있는 생후 28일 이상 18세 미만의 입원 소아 환자를 대상으로, Phoenix-8 sepsis criteria가 Phoenix-4, pSOFA, PELOD-2와 비교하여 전원인 병원 내 사망 예측 성능 및 일상적인 EHR 데이터 가용성 측면에서 어떠한 차이를 보이는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">2009년 4월 1일부터 2024년 3월 31일까지 홍콩 36개 공공 재정 지원 병원에 입원한, 추정 감염(index culture 2일 이내 새로운 항생제 투여 후 ≥4일 지속)이 있는 생후 28일 이상 18세 미만의 소아 입원 환자 140,633명 (중앙값 [IQR] 나이 4.0 [1.0–8.0]세; 남아 77,665명 [55.2%]); 신생아(&lt;28일), 입원 중 출생, 4차 전문병원 단독 입원 환자 제외; 동일 환자의 중복 입원 시 무작위 단일 에피소드 선택</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Index culture 날짜 기준 1 calendar day 이내에 산출된 Phoenix-8 severity score (변수 17개, 구성요소 8개); sepsis를 Phoenix-8 score ≥2로 정의 (n=7,547; 5.4% [95% CI, 5.2%–5.5%]); 비복잡 감염을 Phoenix-8 score &lt;2로 정의 (n=133,086; 94.6% [95% CI, 94.5%–94.8%]); 결측 데이터는 정상으로 간주하여 0점 부여</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">Phoenix-4 (변수 11개, 구성요소 4개; score ≥2 기준), pSOFA (변수 9개, 구성요소 6개; score ≥2 기준), PELOD-2 (변수 10개, 구성요소 5개; AUROC 분석의 Youden index로 최적 threshold 도출) — 동일한 EHR 데이터셋(CDARS)을 활용하여 index culture 날짜 기준 1 calendar day 이내에 산출</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c1)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: AUPRC 및 AUROC로 평가한 전원인 병원 내 사망. Phoenix-8: AUPRC 0.27 (95% CI, 0.23–0.32), AUROC 0.91 (95% CI, 0.89–0.93); Phoenix-4: AUPRC 0.23 (95% CI, 0.19–0.27), AUROC 0.90 (95% CI, 0.88–0.91); PELOD-2: AUPRC 0.29 (95% CI, 0.24–0.33), AUROC 0.89 (95% CI, 0.87–0.91); pSOFA: AUPRC 0.15 (95% CI, 0.12–0.19), AUROC 0.80 (95% CI, 0.78–0.83). Phoenix-8 sepsis 그룹 사망률: 4.5% (95% CI, 4.0%–5.0%; n=337) vs. 비복잡 감염 그룹 0.1% (95% CI, 0.1%–0.1%; n=114) (P&lt;.001). 2차 결과: EHR 데이터 평균 가용성 — pSOFA: 50.7% (95% CI, 50.6%–50.7%); Phoenix-8: 43.3% (95% CI, 43.2%–43.4%); PELOD-2: 38.7% (95% CI, 38.6%–38.7%); Phoenix-4: 28.6% (95% CI, 28.5%–28.7%). 하위그룹 분석: 입원 당일 community-acquired sepsis, hospital-acquired sepsis (index culture ≥입원 후 3일), 데이터 가용성 ≥50% 환자군, 결측 데이터 대체 분석 포함.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>Phoenix-8 criteria는 미국 외 고소득 아시아 의료 환경에서 PICU뿐만 아니라 일반 병동을 포함한 다양한 입원 환경에서 추정 감염 소아 환자의 사망률을 강력하게 예측하며(AUROC 0.91), 원래 도출 코호트를 넘어선 국제적 적용 가능성을 지지한다. 미국 외 의료 기관의 임상의와 의료 시스템은 Phoenix-8을 소아 sepsis 고위험군 식별에 신뢰 있게 활용할 수 있다. 다만, EHR 구현 시 전체 데이터 가용성이 43.3%에 불과하고 특히 point-of-care glucose 값이 임상 기록에는 존재하나 EHR에 구조화되지 않는 경우가 많아 데이터 수집 체계 개선이 필요하다.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42228369</a>
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60 text-[11px] text-gray-400 italic">
+        PICO 데이터는 파이프라인 최초 실행 시 자동으로 채워집니다.
       </div>
     </details>
+
     <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
+      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
+        <span class="w-6 h-6 rounded-full bg-gray-400 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
         <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes.</div>
-          <div class="text-[10px] text-slate-400">Yoon CH, Sjöholm D 외 · JAMA network open · 2026-Jun-01</div>
+          <div class="text-xs font-semibold text-gray-900 leading-snug">Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</div>
+          <div class="text-[10px] text-gray-400 mt-0.5">Park S 외 · Intensive Care Medicine · 2026-May</div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">4</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <span class="text-sm font-black text-gray-900 tabular-nums">6.0</span>
+          <span class="text-[10px] text-gray-400 border border-gray-300 px-1.5 py-0.5 rounded-full">Cohort</span>
+          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </div>
       </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">SENECA 데이터셋에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)이 동일한 비지도 학습 기반 consensus k-means clustering 방법론을 사용하여 유럽의 독립적인 다기관 응급실 코호트에서 재현되고 일반화될 수 있는가?</div>
-        <table class="w-full border-collapse"><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">P</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">유럽 3개 대학병원 응급실에 내원한 성인 환자(≥18세): 스웨덴 스톡홀름 Karolinska University Hospital (N=30,865; 평균 나이 68 [SD 16]세; 남성 59%; 2011년 1월 1일–2023년 9월 1일), 영국 옥스퍼드 Oxford University Hospitals (N=15,575; 평균 나이 71 [SD 18]세; 남성 58%; 2014년 2월 4일–2021년 6월 20일), 노르웨이 오슬로 Oslo University Hospital (N=1,806; 평균 나이 71 [SD 17]세; 남성 59%; 2019년 1월 4일–2023년 10월 9일). 포함 기준: 의심 감염(≥1건의 체액 배양 검사 + 전신 항생제 투여 기록) 및 장기 기능 장애(SOFA score ≥2), 모두 ED 입원 후 6시간 이내. 총 N=48,246 encounters.</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">I</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">29개(일부 변수 미확보 시 26개)의 EHR 기반 임상·검사실 변수를 사용하여 SENECA에서 도출된 4가지 임상 패혈증 표현형(α, β, γ, δ)의 다기관 외부 검증. consensus clustering with k-means (k=4 사전 지정) 사용; multiple imputation with chained equations (11개 imputed datasets, predictive mean matching) 적용; 각 imputed dataset당 resampling fraction 0.8로 20회 resampling 수행. 각 유럽 기관에서 독립적으로 site-specific centroids 도출 후, SENECA centroids를 적용(shortest Euclidean distance)하여 비교.</td>
-        </tr><tr style="background:#f8fafc">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">C</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">각 유럽 검증 기관에 적용된 SENECA 도출 phenotype centroids (원본 미국 기반 도출 코호트, N=20,189, 남성 50%, Elixhauser comorbidity index 평균 1.8 [SD 1.2])와 유럽 기관 간 독립 도출 phenotype centroids의 교차 비교 (Stockholm vs. Oxford vs. Oslo).</td>
-        </tr><tr style="">
-          <td style="padding:5px 10px;width:20px;font-weight:700;color:var(--c2)">O</td>
-          <td style="padding:5px 10px;color:#374151;font-size:11px">1차 결과: SENECA 도출 표현형과 기관별 표현형 간 일치도 — Cohen κ (SENECA vs. Stockholm: κ=0.32; SENECA vs. Oslo: κ=0.37; SENECA vs. Oxford: κ=0.40) 및 Adjusted Rand Index (ARI; SENECA vs. Stockholm: ARI=0.21; SENECA vs. Oslo: ARI=0.27; SENECA vs. Oxford: ARI=0.26). 기관 간 교차 일치도 (Stockholm dataset 기준): Fleiss κ=0.47, 전체 기관 간 percentage agreement=41%; ARI Stockholm vs. Oslo=0.32, Stockholm vs. Oxford=0.57, Stockholm vs. SENECA=0.30. 모든 수치는 낮은~보통 수준의 일치도를 나타내며, SENECA 표현형이 독립적인 유럽 코호트에 일반화되지 않음을 시사.</td>
-        </tr></table>
-        <div class="mt-2.5 bg-amber-50 border-l-4 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>EHR 데이터의 비지도 k-means clustering으로 도출된 4가지 SENECA 임상 패혈증 표현형(α, β, γ, δ)은 3개 대형 유럽 응급실 코호트(총 N=48,246)에서 Cohen κ 0.32–0.40, Adjusted Rand Index 0.21–0.27에 그쳐 일반화 가능성이 낮음을 확인하였다. 임상의와 임상시험 연구자들은 보다 견고하고 일반화 가능한 패혈증 subtyping 체계가 개발될 때까지, 미국 외 환경에서 이 표현형을 환자 층화, enrichment 전략 또는 치료 배정에 적용해서는 안 된다. 향후 연구는 확률적 불안정성(stochasticity)을 줄이고 국제적 환경 간 환자 구성, 동반 질환 부담 및 의료 시스템 관행의 차이를 더 잘 반영하는 대안적 clustering 접근법을 탐색해야 한다.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 42223936</a>
+      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60 text-[11px] text-gray-400 italic">
+        PICO 데이터는 파이프라인 최초 실행 시 자동으로 채워집니다.
       </div>
     </details>
+
   </div>
 </details>
 <!-- /SECTION:2026-06-08 -->
 
-
-
-
-
-
-
-
-
-
-
-<!-- ═══════════════════════════════════════════
-     2026-06-09 — TODAY (날짜 열림 + 논문 열림)
-══════════════════════════════════════════════ -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-blue-50/60 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">past</span>
-        <span class="font-bold text-blue-900 text-sm">2026-06-09</span>
-        <span class="text-slate-400 text-xs">추천 3편</span>
-      </div>
-      <div class="space-y-0.5">
-        <div class="text-xs text-slate-600">① Management of Acute Hemorrhage and Damage-Control Resuscitation</div>
-        <div class="text-[10px] text-slate-400 pl-3">Techniques in VIR · 2026-Jun · PMID 42230073</div>
-        <div class="text-xs text-slate-600 mt-1">② The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA Network Open · 2026-Jun-01 · PMID 42228369</div>
-        <div class="text-xs text-slate-600 mt-1">③ Multicenter Validation of Clinical Sepsis Phenotypes</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA Network Open · 2026-Jun-01 · PMID 42223936</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-    </svg>
-  </summary>
-
-  <div class="slide-in border-t border-blue-100 divide-y divide-slate-100">
-
-    <!-- ── 논문 01 (열림) ── -->
-    <details open class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Management of Acute Hemorrhage and Damage-Control Resuscitation</div>
-          <div class="text-[10px] text-slate-400">Singhal S 외 · Techniques in VIR · 2026-Jun</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">6.0</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-3 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">
-          VIR 의사가 급성 출혈·출혈성 쇼크 환자 관리 시 적용해야 할 근거 기반 DCR 원칙은?
-        </div>
-        <table class="w-full text-[11px] border-collapse">
-          <tr class="pico-row"><td class="py-1.5 px-2.5 w-5 font-bold text-blue-600">P</td><td class="py-1.5 px-2.5 text-slate-700">급성·중증 출혈·출혈성 쇼크로 VIR 시술을 받는 환자 (서술적 종설, 표본 크기 없음)</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-blue-600">I</td><td class="py-1.5 px-2.5 text-slate-700">근거 중심 DCR — ATC 병태생리 관리, 균형 수혈 원칙, 항응고 역전 가이드라인</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-blue-600">C</td><td class="py-1.5 px-2.5 text-slate-700">비프로토콜화된 전통적 소생법과 암묵적 비교 (공식 대조군 없음)</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-blue-600">O</td><td class="py-1.5 px-2.5 text-slate-700">출혈 조절 최적화, ATC 예방·교정, 생존율 향상 (정량 데이터 없음)</td></tr>
-        </table>
-        <div class="mt-2.5 bg-amber-50 border-l-3 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>
-          VIR 의사는 단순 시술자가 아닌 중환자 치료 협력자로서 DCR 원칙·ATC 교정·항응고 역전에 숙달해야 한다.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 원문</a>
-      </div>
-    </details>
-
-    <!-- ── 논문 02 (열림) ── -->
-    <details open class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</div>
-          <div class="text-[10px] text-slate-400">He S 외 · JAMA Network Open · 2026-Jun-01</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.5</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-3 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">
-          홍콩 입원 소아(28일–18세)에서 Phoenix-8 기준이 pSOFA, PELOD-2, Phoenix-4보다 사망률 예측에 우수한가?
-        </div>
-        <table class="w-full text-[11px] border-collapse">
-          <tr class="pico-row"><td class="py-1.5 px-2.5 w-5 font-bold text-emerald-600">P</td><td class="py-1.5 px-2.5 text-slate-700">추정 감염 소아 140,633명 (홍콩 36개 병원, 2009–2024; 중앙값 4.0세)</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-emerald-600">I</td><td class="py-1.5 px-2.5 text-slate-700">Phoenix-8 기준 (score ≥2 = 패혈증; 17변수, 8구성요소)</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-emerald-600">C</td><td class="py-1.5 px-2.5 text-slate-700">Phoenix-4, pSOFA, PELOD-2</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-emerald-600">O</td><td class="py-1.5 px-2.5 text-slate-700"><b>Phoenix-8 AUROC 0.91</b> (95% CI 0.89–0.93) · pSOFA 0.80 · 패혈증 5.4% · 사망률 4.5% vs 0.1% (P&lt;0.001)</td></tr>
-        </table>
-        <div class="mt-2.5 bg-amber-50 border-l-3 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>
-          Phoenix-8은 PICU 외 일반 소아 병동 포함 전체 스펙트럼에서 사망 변별력 우수. 미국 외 환경에서도 일반화 가능성 지지.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 원문</a>
-      </div>
-    </details>
-
-    <!-- ── 논문 03 (열림) ── -->
-    <details open class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Multicenter Validation of Clinical Sepsis Phenotypes (SENECA)</div>
-          <div class="text-[10px] text-slate-400">Yoon CH 외 · JAMA Network Open · 2026-Jun-01</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">5.0</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50">
-        <div class="bg-blue-50 border-l-3 border-blue-400 rounded-r px-3 py-2 text-[11px] text-slate-600 italic mb-2.5">
-          SENECA 4가지 패혈증 표현형(α,β,γ,δ)이 Stockholm·Oxford·Oslo 독립 코호트에서 재현 가능한가?
-        </div>
-        <table class="w-full text-[11px] border-collapse">
-          <tr class="pico-row"><td class="py-1.5 px-2.5 w-5 font-bold text-violet-600">P</td><td class="py-1.5 px-2.5 text-slate-700">성인 ED 패혈증 48,246명 (Stockholm 30,865 + Oxford 15,575 + Oslo 1,806)</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-violet-600">I</td><td class="py-1.5 px-2.5 text-slate-700">k=4 k-means 합의 군집 분석 (29변수, 기관별 독립 시행, MICE 다중대체)</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-violet-600">C</td><td class="py-1.5 px-2.5 text-slate-700">미국 SENECA 도출 코호트 표현형(α,β,γ,δ)과 교차 비교</td></tr>
-          <tr class="pico-row"><td class="py-1.5 px-2.5 font-bold text-violet-600">O</td><td class="py-1.5 px-2.5 text-slate-700"><b>재현성 낮음</b> — Cohen κ 0.32–0.40 · ARI 0.21–0.27 · Fleiss κ 0.47 · 전체 일치율 41%</td></tr>
-        </table>
-        <div class="mt-2.5 bg-amber-50 border-l-3 border-amber-400 rounded-r px-3 py-2 text-[11px] text-slate-700">
-          <b class="text-amber-700">💡 임상 포인트</b><br>
-          SENECA 표현형은 비미국 환경에서 로컬 검증 없이 적용 시 주의 필요.
-        </div>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="inline-block mt-2 text-[10px] text-blue-500 hover:underline">🔗 PubMed 원문</a>
-      </div>
-    </details>
-
-  </div>
-</details>
-
-
-<!-- ═══════════════════════════════════════════
-     2026-06-08 — 접힘 (제목·저널·날짜 보임)
-══════════════════════════════════════════════ -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-slate-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">-1일</span>
-        <span class="font-bold text-slate-700 text-sm">2026-06-08</span>
-        <span class="text-slate-400 text-xs">추천 3편</span>
-      </div>
-      <div class="space-y-0.5">
-        <div class="text-xs text-slate-500">① Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</div>
-        <div class="text-[10px] text-slate-400 pl-3">Frontiers in Immunology · 2026 · PMID 42238588</div>
-        <div class="text-xs text-slate-500 mt-1">② Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</div>
-        <div class="text-[10px] text-slate-400 pl-3">Critical Care Medicine · 2026-Jun · PMID 42219034</div>
-        <div class="text-xs text-slate-500 mt-1">③ Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</div>
-        <div class="text-[10px] text-slate-400 pl-3">Intensive Care Medicine · 2026-May · PMID 42201156</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-    </svg>
-  </summary>
-
-  <div class="slide-in border-t border-slate-100 divide-y divide-slate-100">
-    <!-- 논문 01 (접힘) -->
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</div>
-          <div class="text-[10px] text-slate-400">Wang C 외 · Frontiers in Immunology · 2026</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">7.0</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
-        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
-      </div>
-    </details>
-    <!-- 논문 02 (접힘) -->
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</div>
-          <div class="text-[10px] text-slate-400">Kim J 외 · Critical Care Medicine · 2026-Jun</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.5</span>
-          <span class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full">High</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
-        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
-      </div>
-    </details>
-    <!-- 논문 03 (접힘) -->
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</div>
-          <div class="text-[10px] text-slate-400">Park S 외 · Intensive Care Medicine · 2026-May</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">6.0</span>
-          <span class="text-[10px] bg-red-100 text-red-600 px-1.5 py-0.5 rounded-full">Low</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
-        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
-      </div>
-    </details>
-  </div>
-</details>
-
-
-<!-- ═══════════════════════════════════════════
-     2026-06-06 — 접힘
-══════════════════════════════════════════════ -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-slate-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">-3일</span>
-        <span class="font-bold text-slate-700 text-sm">2026-06-06</span>
-        <span class="text-slate-400 text-xs">추천 3편</span>
-      </div>
-      <div class="space-y-0.5">
-        <div class="text-xs text-slate-500">① High-Flow Nasal Oxygen vs NIV in Acute Hypoxemic Respiratory Failure</div>
-        <div class="text-[10px] text-slate-400 pl-3">NEJM Evidence · 2026-Jun · PMID 42180234</div>
-        <div class="text-xs text-slate-500 mt-1">② Point-of-Care Ultrasound in Cardiac Arrest: Systematic Review</div>
-        <div class="text-[10px] text-slate-400 pl-3">Resuscitation · 2026-May · PMID 42165089</div>
-        <div class="text-xs text-slate-500 mt-1">③ Restrictive vs Liberal Transfusion Strategy in Septic Shock</div>
-        <div class="text-[10px] text-slate-400 pl-3">JAMA · 2026-May · PMID 42152341</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-    </svg>
-  </summary>
-  <div class="slide-in border-t border-slate-100 divide-y divide-slate-100">
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">High-Flow Nasal Oxygen vs NIV in Acute Hypoxemic Respiratory Failure</div>
-          <div class="text-[10px] text-slate-400">Lee H 외 · NEJM Evidence · 2026-Jun</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-blue-700">8.0</span>
-          <span class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full">High</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
-        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
-      </div>
-    </details>
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">02</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Point-of-Care Ultrasound in Cardiac Arrest: Systematic Review</div>
-          <div class="text-[10px] text-slate-400">Choi Y 외 · Resuscitation · 2026-May</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-emerald-700">7.0</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
-        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
-      </div>
-    </details>
-    <details class="group">
-      <summary class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 transition select-none">
-        <span class="w-6 h-6 rounded-full bg-violet-500 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">03</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-xs font-semibold text-slate-700 leading-snug">Restrictive vs Liberal Transfusion Strategy in Septic Shock</div>
-          <div class="text-[10px] text-slate-400">Jung M 외 · JAMA · 2026-May</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-xs font-bold text-violet-700">6.5</span>
-          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">Mod</span>
-          <svg class="chev w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-1 bg-slate-50/50 text-[11px] text-slate-500 italic">
-        (이전 날짜 데이터 — 실제 파이프라인 실행 시 PICO 전체 내용이 여기에 채워집니다)
-      </div>
-    </details>
-  </div>
-</details>
-
 </div>
 
 <!-- JOURNAL_TABLE_START -->
-<div class="max-w-2xl mx-auto px-3 pb-6 mt-2"><div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden"><div class="px-4 py-3 bg-slate-50 border-b border-slate-200 flex items-center gap-2"><h2 class="text-sm font-bold text-slate-700">📋 누적 선정 저널 목록</h2><span class="ml-auto text-xs text-slate-400">12편</span></div><div class="overflow-x-auto"><table class="w-full text-xs"><thead class="bg-slate-50 border-b border-slate-200"><tr><th class="px-3 py-2 text-left font-semibold text-slate-500 whitespace-nowrap">날짜</th><th class="px-3 py-2 text-left font-semibold text-slate-500">저널</th><th class="px-3 py-2 text-left font-semibold text-slate-500">논문</th></tr></thead><tbody><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-10</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">Techniques in vascular and interventional radiology</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="text-blue-500 hover:underline">Management of Acute Hemorrhage and Damage-Control Resus…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-10</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="text-blue-500 hover:underline">The Phoenix Criteria and Other Severity Scores in Ident…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-10</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="text-blue-500 hover:underline">Multicenter Validation of Clinical Sepsis Phenotypes.</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-10</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">Techniques in vascular and interventional radiology</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="text-blue-500 hover:underline">Management of Acute Hemorrhage and Damage-Control Resus…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-10</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="text-blue-500 hover:underline">The Phoenix Criteria and Other Severity Scores in Ident…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-10</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="text-blue-500 hover:underline">Multicenter Validation of Clinical Sepsis Phenotypes.</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-09</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">Techniques in vascular and interventional radiology</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="text-blue-500 hover:underline">Management of Acute Hemorrhage and Damage-Control Resus…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-09</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="text-blue-500 hover:underline">The Phoenix Criteria and Other Severity Scores in Ident…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-09</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="text-blue-500 hover:underline">Multicenter Validation of Clinical Sepsis Phenotypes.</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-08</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">Techniques in vascular and interventional radiology</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="text-blue-500 hover:underline">Management of Acute Hemorrhage and Damage-Control Resus…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-08</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="text-blue-500 hover:underline">The Phoenix Criteria and Other Severity Scores in Ident…</a></td></tr><tr class="border-t border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 text-slate-500 whitespace-nowrap text-[10px]">2026-06-08</td><td class="px-3 py-2 font-medium text-slate-700 text-[11px]">JAMA network open</td><td class="px-3 py-2 text-slate-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="text-blue-500 hover:underline">Multicenter Validation of Clinical Sepsis Phenotypes.</a></td></tr></tbody></table></div></div></div>
-<!-- JOURNAL_TABLE_END -->
-<div class="text-center text-[10px] text-slate-400 py-6 border-t border-slate-200 mt-2">
-  AI Literature Review Pipeline · Claude · PubMed 최근 30일
+<div class="max-w-2xl mx-auto px-3 pb-8 mt-2">
+  <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+    <div class="px-4 py-3.5 bg-gray-900 flex items-center gap-3">
+      <h2 class="text-sm font-bold text-white tracking-wide">Curated Journal Archive</h2>
+      <span class="ml-auto text-xs text-gray-500 tabular-nums">9 entries</span>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs">
+        <thead>
+          <tr class="border-b border-gray-200">
+            <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider whitespace-nowrap w-20">Date</th>
+            <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider whitespace-nowrap w-28">Journal</th>
+            <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider whitespace-nowrap w-20">Published</th>
+            <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Article</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-gray-100 hover:bg-gray-50">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-10</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">N Engl J Med</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">May 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42150044/" target="_blank" class="hover:underline hover:text-gray-900">Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-10</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">N Engl J Med</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">Jun 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" class="hover:underline hover:text-gray-900">High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure (SOHO Trial)</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-10</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">Lancet Respir Med</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">May 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/41881047/" target="_blank" class="hover:underline hover:text-gray-900">Procalcitonin + NEWS2 vs Usual Care for Sepsis ID in Emergency Department (PRONTO Trial)</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50" style="background:#fafafa">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-09</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">Tech Vasc Interv Radiol</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">Jun 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42230073/" target="_blank" class="hover:underline hover:text-gray-900">Management of Acute Hemorrhage and Damage-Control Resuscitation</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50" style="background:#fafafa">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-09</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">JAMA Network Open</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">Jun 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42228369/" target="_blank" class="hover:underline hover:text-gray-900">The Phoenix Criteria and Other Severity Scores in Identifying Pediatric Sepsis</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50" style="background:#fafafa">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-09</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">JAMA Network Open</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">Jun 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42223936/" target="_blank" class="hover:underline hover:text-gray-900">Multicenter Validation of Clinical Sepsis Phenotypes (SENECA)</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-08</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">Front Immunol</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42238588/" target="_blank" class="hover:underline hover:text-gray-900">Sepsis-Associated AKI: Mitochondrial Dysfunction Mechanisms</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-08</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">Crit Care Med</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">Jun 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42219034/" target="_blank" class="hover:underline hover:text-gray-900">Early vs Delayed Vasopressor in Septic Shock: A Meta-Analysis</a></td>
+          </tr>
+          <tr class="border-t border-gray-100 hover:bg-gray-50">
+            <td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-08</td>
+            <td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">Intensive Care Med</td>
+            <td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">May 2026</td>
+            <td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42201156/" target="_blank" class="hover:underline hover:text-gray-900">Procalcitonin-Guided Antibiotic De-escalation in ICU Patients</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+<!-- JOURNAL_TABLE_END -->
+
+<div class="text-center text-[10px] text-gray-400 py-6 border-t border-gray-200 mt-2">
+  AI Literature Review Pipeline · Claude · PubMed 최근 30일 · <a href="https://njell85-spec.github.io/Trend_Review/" class="hover:underline">njell85-spec.github.io/Trend_Review</a>
+</div>
+
 </body>
 </html>
