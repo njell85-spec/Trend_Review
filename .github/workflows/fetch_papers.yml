@@ -1,0 +1,142 @@
+name: Fetch Papers Daily
+
+on:
+  schedule:
+    - cron: '30 21 * * *'   # 21:30 UTC = 06:30 KST (routine runs 07:00 KST)
+  workflow_dispatch:          # allow manual run from Actions tab
+
+permissions:
+  contents: write             # GITHUB_TOKEN can push (no PAT needed)
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch, screen, and pre-score EM/CCM papers
+        run: |
+          python3 - <<'EOF'
+          import json, re, urllib.request, urllib.parse
+          from datetime import datetime, timedelta, timezone
+
+          # ---------- window ----------
+          now   = datetime.now(timezone.utc)
+          since = (now - timedelta(days=30)).strftime('%Y-%m-%d')
+          today = now.strftime('%Y-%m-%d')
+
+          # ---------- Stage 0+1: query with publication-type hard filter ----------
+          topic = ('(emergency medicine OR emergency department OR critical care OR '
+                   'intensive care OR resuscitation OR sepsis OR septic shock OR trauma OR '
+                   'cardiac arrest OR mechanical ventilation OR acute respiratory)')
+          incl  = ('(PUB_TYPE:"Randomized Controlled Trial" OR PUB_TYPE:"Meta-Analysis" OR '
+                   'PUB_TYPE:"Systematic Review" OR PUB_TYPE:"Multicenter Study" OR '
+                   'PUB_TYPE:"Practice Guideline" OR PUB_TYPE:"Guideline" OR '
+                   'PUB_TYPE:"Comparative Study" OR PUB_TYPE:"Observational Study")')
+          excl  = ('NOT (PUB_TYPE:"Case Reports" OR PUB_TYPE:"Editorial" OR PUB_TYPE:"Letter" OR '
+                   'PUB_TYPE:"Comment" OR PUB_TYPE:"News" OR PUB_TYPE:"Published Erratum")')
+          query = (f'{topic} AND {incl} {excl} AND '
+                   f'(FIRST_PDATE:[{since} TO {today}]) AND (LANG:"eng") AND (SRC:"MED")')
+
+          base = 'https://www.ebi.ac.uk/europepmc/webservices/rest/search'
+          params = {'query': query, 'resultType': 'core', 'pageSize': '100',
+                    'format': 'json', 'sort': 'P_PDATE_D desc'}
+          url = base + '?' + urllib.parse.urlencode(params)
+          resp = json.loads(urllib.request.urlopen(url, timeout=40).read())
+          results = resp.get('resultList', {}).get('result', [])
+
+          # ---------- Stage 2: journal tier ----------
+          TIER1 = ['n engl j med','new england journal of medicine','lancet','jama','bmj',
+                   'nat med','nature medicine']
+          TIER2 = ['intensive care med','am j respir crit care med','lancet respir med',
+                   'lancet infect dis','circulation','ann intern med','jama intern med',
+                   'jama cardiol','jama netw open']
+          TIER3 = ['ann emerg med','crit care med','critical care','crit care','resuscitation',
+                   'chest','acad emerg med','emerg med j','shock','ann intensive care',
+                   'eur j emerg med','j am coll emerg physicians open','cjem']
+
+          def journal_tier(j):
+              jl = (j or '').lower()
+              # tier1 must avoid matching 'lancet respir' as plain 'lancet' before tier2? handle order
+              for name in TIER2:
+                  if name in jl: return 2, 30
+              for name in TIER1:
+                  if name in jl: return 1, 40
+              for name in TIER3:
+                  if name in jl: return 3, 20
+              return 4, 8
+
+          # ---------- Stage 2: study design ----------
+          def design(pubtypes):
+              s = ' '.join(pubtypes).lower()
+              if 'meta-analysis' in s or 'systematic review' in s: return 25, 'Meta'
+              if 'randomized controlled trial' in s:
+                  return (25 if 'multicenter' in s else 18), 'RCT'
+              if 'guideline' in s: return 20, 'Guideline'
+              if 'observational' in s or 'cohort' in s: return 12, 'Cohort'
+              return 5, 'Other'
+
+          # ---------- Stage 2: rough sample size from abstract ----------
+          def sample_size(abstract):
+              if not abstract: return 0, ''
+              nums = []
+              for m in re.finditer(r'(?:n\s*=\s*|enrolled\s+|included\s+|randomi[sz]ed\s+|total\s+of\s+)([\d,]{2,})', abstract, re.I):
+                  nums.append(int(m.group(1).replace(',', '')))
+              for m in re.finditer(r'([\d,]{3,})\s+(?:patients|participants|subjects|adults)', abstract, re.I):
+                  nums.append(int(m.group(1).replace(',', '')))
+              if not nums: return 0, ''
+              n = max(nums)
+              w = 10 if n >= 1000 else 7 if n >= 500 else 4 if n >= 100 else 0
+              return w, str(n)
+
+          papers = []
+          for r in results:
+              pub  = r.get('firstPublicationDate', '')
+              yr   = pub[:4] if pub else ''
+              mo   = datetime.strptime(pub[5:7], '%m').strftime('%b') if len(pub) >= 7 else ''
+              jrnl = (r.get('journalInfo', {}).get('journal', {}).get('medlineAbbreviation')
+                      or r.get('journalInfo', {}).get('journal', {}).get('title')
+                      or r.get('journalTitle', ''))
+              pubtypes = r.get('pubTypeList', {}).get('pubType', []) or []
+              if isinstance(pubtypes, str): pubtypes = [pubtypes]
+              abstract = r.get('abstractText', '') or ''
+              abstract = re.sub(r'<[^>]+>', '', abstract)
+
+              tier, tw = journal_tier(jrnl)
+              dw, stype = design(pubtypes)
+              sw, n_est = sample_size(abstract)
+              pre_score = tw + dw + sw
+
+              papers.append({
+                  'pmid': r.get('pmid', ''),
+                  'title': re.sub(r'<[^>]+>', '', r.get('title', '')),
+                  'authors': r.get('authorString', ''),
+                  'journal': jrnl,
+                  'year': yr, 'month': mo,
+                  'abstract': abstract,
+                  'doi': r.get('doi', ''),
+                  'pubDate': pub,
+                  'journal_tier': tier,
+                  'study_type': stype,
+                  'n_est': n_est,
+                  'pre_score': pre_score,
+              })
+
+          # ---------- Stage 2: rank, keep top 40 candidate pool ----------
+          papers.sort(key=lambda p: p['pre_score'], reverse=True)
+          papers = papers[:40]
+
+          out = {'fetched_at': now.isoformat(), 'date': today,
+                 'window_days': 30, 'candidate_count': len(papers), 'papers': papers}
+          with open('data/raw_papers.json', 'w', encoding='utf-8') as f:
+              json.dump(out, f, ensure_ascii=False)
+          print(f'Fetched/screened -> {len(papers)} candidates (from {len(results)} raw)')
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/raw_papers.json
+          git diff --staged --quiet || git commit -m "Auto-fetch papers: $(date +%Y-%m-%d)"
+          git push
