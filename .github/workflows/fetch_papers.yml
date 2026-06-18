@@ -39,7 +39,7 @@ jobs:
                    f'(FIRST_PDATE:[{since} TO {today}]) AND (LANG:"eng") AND (SRC:"MED")')
 
           base = 'https://www.ebi.ac.uk/europepmc/webservices/rest/search'
-          params = {'query': query, 'resultType': 'core', 'pageSize': '100',
+          params = {'query': query, 'resultType': 'core', 'pageSize': '200',
                     'format': 'json', 'sort': 'P_PDATE_D desc'}
           url = base + '?' + urllib.parse.urlencode(params)
           resp = json.loads(urllib.request.urlopen(url, timeout=40).read())
@@ -73,16 +73,27 @@ jobs:
               if tkey in JMAP: return JMAP[tkey]
               return (4, 8)
 
-          # ---------- Stage 2: EM/CCM relevance bonus ----------
-          EM_TERMS = ['emergency department','emergency medicine','intensive care','critical care',
-                      'icu','sepsis','septic shock','resuscitation','cardiac arrest','out-of-hospital',
-                      'prehospital','mechanical ventilation','vasopressor','intubation','triage',
-                      'trauma','acute respiratory','shock','code blue','acute kidney injury']
+          # ---------- Stage 2: EM/CCM relevance GATE + bonus ----------
+          # Returns None to HARD-DROP a paper that is not genuinely EM/CCM.
+          CORE = ['emergency department','emergency medicine','emergency physician','emergency care',
+                  'intensive care','critical care','critically ill','critical illness',' icu ','icu,',
+                  'sepsis','septic shock','resuscitation','cardiac arrest','cardiopulmonary',
+                  'mechanical ventilation','out-of-hospital','prehospital','triage','vasopressor',
+                  'intubation','acute respiratory distress','acute respiratory failure']
+          VET = ['veterinar','bovine','swine','porcine','poultry','cattle','canine','feline',
+                 'broiler','piglet','livestock']
 
           def relevance(title, abstract):
-              s = (title + ' ' + abstract).lower()
-              hits = sum(1 for t in EM_TERMS if t in s)
-              return min(hits * 3, 12)   # up to +12
+              t = (title or '').lower(); a = (abstract or '').lower(); s = t + ' ' + a
+              if any(v in s for v in VET):
+                  return None                         # off-domain (veterinary)
+              hits = [c for c in CORE if c in s]
+              if not hits:
+                  return None                         # not EM/CCM -> drop
+              score = min(len(hits) * 4, 20)
+              if any(c in t for c in CORE):
+                  score += 8                           # core topic appears in the title
+              return score
 
           # ---------- Stage 2: study design ----------
           def design(pubtypes):
@@ -120,11 +131,13 @@ jobs:
               abstract = r.get('abstractText', '') or ''
               abstract = re.sub(r'<[^>]+>', '', abstract)
 
+              rw = relevance(r.get('title', ''), abstract)
+              if rw is None:
+                  continue                             # hard-drop: not EM/CCM relevant
               jabbrev = (r.get('journalInfo', {}).get('journal', {}).get('medlineAbbreviation') or jrnl)
               tier, tw = journal_tier(jabbrev, jrnl)
               dw, stype = design(pubtypes)
               sw, n_est = sample_size(abstract)
-              rw = relevance(r.get('title', ''), abstract)
               pre_score = tw + dw + sw + rw
 
               papers.append({
