@@ -3,195 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trend Review — 디자인 시안 테스트</title>
+<title>Trend Review — 전체 디자인 시안</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body { background:#f3f4f6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
-  .variant-label { letter-spacing:-0.01em; }
-</style>
+<style> body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; } </style>
 </head>
-<body class="py-8">
-<div class="max-w-2xl mx-auto px-3">
-  <h1 class="text-2xl font-black text-gray-900 mb-1">Trend Review · 접힌 상태 디자인 시안</h1>
-  <p class="text-sm text-gray-500 mb-8">아래 4가지 중 마음에 드는 번호를 골라주세요. 모두 오늘(6/18) 실제 논문 3편으로 렌더했습니다.</p>
+<body class="bg-gray-100 min-h-screen py-10">
+<div class="max-w-xl mx-auto px-4">
+  <h1 class="text-2xl font-black text-gray-900 mb-1">Trend Review · 전체 페이지 디자인 시안</h1>
+  <p class="text-sm text-gray-500 mb-8">아래 3가지는 페이지 전체(헤더·통계·펼친 카드·저널 표까지)를 새로 디자인한 것입니다. 각각 열어보고 마음에 드는 번호를 알려주세요. 접힌 제목은 모두 15px 굵게로 키웠습니다.</p>
 
-  <!-- ============ 현재(기준) ============ -->
-  <div class="mb-3 flex items-center gap-2">
-    <span class="text-xs font-bold text-white bg-gray-500 px-2 py-0.5 rounded">현재</span>
-    <span class="variant-label text-sm font-semibold text-gray-600">지금 사이트 (제목 12px · medium)</span>
+  <a href="design_a.html" class="block bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition p-5 mb-4">
+    <div class="flex items-center gap-2 mb-1"><span class="text-xs font-bold text-white bg-stone-600 px-2 py-0.5 rounded">시안 A</span><span class="text-base font-bold text-gray-900">Editorial · 학술지풍</span></div>
+    <p class="text-[13px] text-gray-500 leading-relaxed">크림색 배경 + Serif(명조) 제목 + 넉넉한 여백. 차분하고 권위 있는 의학 저널 느낌. 색을 절제한 클래식.</p>
+  </a>
+
+  <a href="design_b.html" class="block bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition p-5 mb-4">
+    <div class="flex items-center gap-2 mb-1"><span class="text-xs font-bold text-white bg-blue-600 px-2 py-0.5 rounded">시안 B</span><span class="text-base font-bold text-gray-900">Modern Gradient · 모던 대시보드</span></div>
+    <p class="text-[13px] text-gray-500 leading-relaxed">그라데이션 헤더 + 유리효과 통계카드 + 둥근 카드/그림자 + 컬러 번호뱃지. 앱 같은 현대적·화사한 느낌.</p>
+  </a>
+
+  <a href="design_c.html" class="block bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition p-5 mb-8">
+    <div class="flex items-center gap-2 mb-1"><span class="text-xs font-bold text-white bg-teal-600 px-2 py-0.5 rounded">시안 C</span><span class="text-base font-bold text-gray-900">Clinical Pro · 다크+틸 전문가풍</span></div>
+    <p class="text-[13px] text-gray-500 leading-relaxed">다크 헤더 + 틸(teal) 강조색 + 모노스페이스 통계/PMID + 좌측 컬러바. 데이터 밀도 높고 프로페셔널.</p>
+  </a>
+
+  <div class="border-t border-gray-200 pt-5">
+    <a href="design_test_collapsed.html" class="text-[13px] text-gray-500 underline hover:text-gray-800">· 참고: 접힌 제목만 비교한 이전 시안(4종)도 보기</a>
   </div>
-  <details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white mb-10">
-    <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-2.5">
-          <span class="font-bold text-gray-900 text-sm">2026-06-18</span>
-          <span class="text-gray-400 text-xs">· 3편</span>
-        </div>
-        <div class="space-y-1">
-          <div class="text-xs font-medium text-gray-700 mt-1">① The effects of mechanical ventilation during v-a ecmo support: a systematic review.</div>
-          <div class="text-[10px] text-gray-400 pl-3">Crit Care · 2026-Jun · PMID 42249495</div>
-          <div class="text-xs font-medium text-gray-700 mt-1">② Predictive validity of daily sequential organ failure assessment (SOFA)-2 score for 30-day mortality.</div>
-          <div class="text-[10px] text-gray-400 pl-3">Crit Care · 2026-Jun · PMID 42226253</div>
-          <div class="text-xs font-medium text-gray-700 mt-1">③ 2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.</div>
-          <div class="text-[10px] text-gray-400 pl-3">Clin Exp Emerg Med · 2026-May · PMID 42297409</div>
-        </div>
-      </div>
-    </summary>
-    <div class="border-t border-gray-200 p-4 text-sm text-gray-400">… 펼치면 카드 내용 …</div>
-  </details>
-
-  <!-- ============ 시안 1 — Bold Minimal ============ -->
-  <div class="mb-3 flex items-center gap-2">
-    <span class="text-xs font-bold text-white bg-blue-600 px-2 py-0.5 rounded">시안 1</span>
-    <span class="variant-label text-sm font-semibold text-gray-700">Bold Minimal — 큰 굵은 제목 + 번호 원형뱃지</span>
-  </div>
-  <details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white mb-10">
-    <summary class="px-4 py-4 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="font-bold text-gray-900 text-sm">2026-06-18</span>
-          <span class="text-gray-400 text-xs">· 3편</span>
-        </div>
-        <div class="space-y-3">
-          <div class="flex gap-2.5">
-            <span class="w-5 h-5 rounded-full bg-gray-900 text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug">The effects of mechanical ventilation during v-a ecmo support: a systematic review.</div>
-              <div class="text-[11px] text-gray-400 mt-0.5">Crit Care · 2026-Jun · PMID 42249495</div>
-            </div>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="w-5 h-5 rounded-full bg-gray-600 text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug">Predictive validity of daily sequential organ failure assessment (SOFA)-2 score for 30-day mortality.</div>
-              <div class="text-[11px] text-gray-400 mt-0.5">Crit Care · 2026-Jun · PMID 42226253</div>
-            </div>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="w-5 h-5 rounded-full bg-gray-400 text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug">2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.</div>
-              <div class="text-[11px] text-gray-400 mt-0.5">Clin Exp Emerg Med · 2026-May · PMID 42297409</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </summary>
-    <div class="border-t border-gray-200 p-4 text-sm text-gray-400">… 펼치면 카드 내용 …</div>
-  </details>
-
-  <!-- ============ 시안 2 — Medal Cards ============ -->
-  <div class="mb-3 flex items-center gap-2">
-    <span class="text-xs font-bold text-white bg-blue-600 px-2 py-0.5 rounded">시안 2</span>
-    <span class="variant-label text-sm font-semibold text-gray-700">Medal Cards — 메달 + 미니카드 + 저널 태그</span>
-  </div>
-  <details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white mb-10">
-    <summary class="px-4 py-4 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="font-bold text-gray-900 text-sm">2026-06-18</span>
-          <span class="text-gray-400 text-xs">· 3편</span>
-        </div>
-        <div class="space-y-2">
-          <div class="flex gap-3 items-start bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5">
-            <span class="text-lg leading-none mt-0.5">🥇</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug">The effects of mechanical ventilation during v-a ecmo support: a systematic review.</div>
-              <div class="mt-1 flex items-center gap-1.5"><span class="text-[10px] font-semibold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded">Crit Care</span><span class="text-[10px] text-gray-400">2026-Jun · PMID 42249495</span></div>
-            </div>
-          </div>
-          <div class="flex gap-3 items-start bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5">
-            <span class="text-lg leading-none mt-0.5">🥈</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug">Predictive validity of daily sequential organ failure assessment (SOFA)-2 score for 30-day mortality.</div>
-              <div class="mt-1 flex items-center gap-1.5"><span class="text-[10px] font-semibold text-gray-700 bg-gray-200 px-1.5 py-0.5 rounded">Crit Care</span><span class="text-[10px] text-gray-400">2026-Jun · PMID 42226253</span></div>
-            </div>
-          </div>
-          <div class="flex gap-3 items-start bg-orange-50 border border-orange-200 rounded-lg px-3 py-2.5">
-            <span class="text-lg leading-none mt-0.5">🥉</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug">2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.</div>
-              <div class="mt-1 flex items-center gap-1.5"><span class="text-[10px] font-semibold text-orange-700 bg-orange-100 px-1.5 py-0.5 rounded">Clin Exp Emerg Med</span><span class="text-[10px] text-gray-400">2026-May · PMID 42297409</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </summary>
-    <div class="border-t border-gray-200 p-4 text-sm text-gray-400">… 펼치면 카드 내용 …</div>
-  </details>
-
-  <!-- ============ 시안 3 — Accent Bar ============ -->
-  <div class="mb-3 flex items-center gap-2">
-    <span class="text-xs font-bold text-white bg-blue-600 px-2 py-0.5 rounded">시안 3</span>
-    <span class="variant-label text-sm font-semibold text-gray-700">Accent Bar — 좌측 컬러바 + 굵은 제목 + 근거 칩</span>
-  </div>
-  <details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white mb-10">
-    <summary class="px-4 py-4 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="font-bold text-gray-900 text-sm">2026-06-18</span>
-          <span class="text-gray-400 text-xs">· 3편</span>
-        </div>
-        <div class="space-y-2.5">
-          <div class="border-l-4 border-amber-400 pl-3">
-            <div class="text-[15px] font-extrabold text-gray-900 leading-snug">The effects of mechanical ventilation during v-a ecmo support: a systematic review.</div>
-            <div class="mt-1 flex items-center gap-2"><span class="text-[11px] font-semibold text-gray-600">Crit Care</span><span class="text-[10px] text-white bg-gray-800 px-1.5 py-0.5 rounded-full">Meta</span><span class="text-[10px] text-gray-400">PMID 42249495</span></div>
-          </div>
-          <div class="border-l-4 border-gray-400 pl-3">
-            <div class="text-[15px] font-extrabold text-gray-900 leading-snug">Predictive validity of daily sequential organ failure assessment (SOFA)-2 score for 30-day mortality.</div>
-            <div class="mt-1 flex items-center gap-2"><span class="text-[11px] font-semibold text-gray-600">Crit Care</span><span class="text-[10px] text-gray-600 border border-gray-400 px-1.5 py-0.5 rounded-full">Cohort</span><span class="text-[10px] text-gray-400">PMID 42226253</span></div>
-          </div>
-          <div class="border-l-4 border-orange-400 pl-3">
-            <div class="text-[15px] font-extrabold text-gray-900 leading-snug">2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.</div>
-            <div class="mt-1 flex items-center gap-2"><span class="text-[11px] font-semibold text-gray-600">Clin Exp Emerg Med</span><span class="text-[10px] text-blue-700 border border-blue-300 px-1.5 py-0.5 rounded-full">Guideline</span><span class="text-[10px] text-gray-400">PMID 42297409</span></div>
-          </div>
-        </div>
-      </div>
-    </summary>
-    <div class="border-t border-gray-200 p-4 text-sm text-gray-400">… 펼치면 카드 내용 …</div>
-  </details>
-
-  <!-- ============ 시안 4 — Gradient Glass ============ -->
-  <div class="mb-3 flex items-center gap-2">
-    <span class="text-xs font-bold text-white bg-blue-600 px-2 py-0.5 rounded">시안 4</span>
-    <span class="variant-label text-sm font-semibold text-gray-700">Gradient — 그라데이션 번호 + 큰 제목 + 호버 강조</span>
-  </div>
-  <details class="rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-gradient-to-b from-white to-gray-50 mb-10">
-    <summary class="px-4 py-4 flex items-start gap-3 hover:bg-white/60 transition select-none">
-      <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="font-black text-gray-900 text-sm tracking-tight">2026-06-18</span>
-          <span class="text-white text-[10px] font-bold bg-gradient-to-r from-blue-600 to-indigo-600 px-2 py-0.5 rounded-full">TODAY · 3편</span>
-        </div>
-        <div class="space-y-2.5">
-          <div class="group flex gap-3 items-start rounded-xl px-2 py-1.5 hover:bg-blue-50/70 transition">
-            <span class="w-6 h-6 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 text-white text-[12px] font-black flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">1</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug group-hover:text-blue-900">The effects of mechanical ventilation during v-a ecmo support: a systematic review.</div>
-              <div class="text-[11px] text-gray-400 mt-0.5">Crit Care · 2026-Jun · PMID 42249495</div>
-            </div>
-          </div>
-          <div class="group flex gap-3 items-start rounded-xl px-2 py-1.5 hover:bg-blue-50/70 transition">
-            <span class="w-6 h-6 rounded-lg bg-gradient-to-br from-slate-400 to-slate-600 text-white text-[12px] font-black flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">2</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug group-hover:text-blue-900">Predictive validity of daily sequential organ failure assessment (SOFA)-2 score for 30-day mortality.</div>
-              <div class="text-[11px] text-gray-400 mt-0.5">Crit Care · 2026-Jun · PMID 42226253</div>
-            </div>
-          </div>
-          <div class="group flex gap-3 items-start rounded-xl px-2 py-1.5 hover:bg-blue-50/70 transition">
-            <span class="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 text-white text-[12px] font-black flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">3</span>
-            <div class="min-w-0">
-              <div class="text-[15px] font-bold text-gray-900 leading-snug group-hover:text-blue-900">2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.</div>
-              <div class="text-[11px] text-gray-400 mt-0.5">Clin Exp Emerg Med · 2026-May · PMID 42297409</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </summary>
-    <div class="border-t border-gray-200 p-4 text-sm text-gray-400">… 펼치면 카드 내용 …</div>
-  </details>
-
-  <p class="text-center text-xs text-gray-400 mt-4 mb-10">© Trend Review 디자인 테스트 · 고른 번호를 알려주세요</p>
+  <p class="text-center text-xs text-gray-400 mt-8">고른 번호를 알려주시면 루틴 + 기존 10일 전체에 적용합니다 · 섞기/수정 요청도 가능</p>
 </div>
 </body>
 </html>
