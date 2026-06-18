@@ -45,26 +45,44 @@ jobs:
           resp = json.loads(urllib.request.urlopen(url, timeout=40).read())
           results = resp.get('resultList', {}).get('result', [])
 
-          # ---------- Stage 2: journal tier ----------
-          TIER1 = ['n engl j med','new england journal of medicine','lancet','jama','bmj',
-                   'nat med','nature medicine']
-          TIER2 = ['intensive care med','am j respir crit care med','lancet respir med',
-                   'lancet infect dis','circulation','ann intern med','jama intern med',
-                   'jama cardiol','jama netw open']
-          TIER3 = ['ann emerg med','crit care med','critical care','crit care','resuscitation',
-                   'chest','acad emerg med','emerg med j','shock','ann intensive care',
-                   'eur j emerg med','j am coll emerg physicians open','cjem']
+          # ---------- Stage 2: journal tier (EXACT abbreviation match) ----------
+          # Keyed by normalized Medline abbreviation -> (tier, weight).
+          # Exact match avoids 'BMJ Open'/'JAMA Surg' being mistaken for flagship BMJ/JAMA.
+          JMAP = {
+              # Tier 1 — general flagship (very high IF)
+              'n engl j med': (1, 40), 'lancet': (1, 40), 'jama': (1, 40),
+              'bmj': (1, 40), 'nat med': (1, 40),
+              # Tier 2 — high-impact specialty / general
+              'intensive care med': (2, 30), 'am j respir crit care med': (2, 30),
+              'lancet respir med': (2, 30), 'lancet infect dis': (2, 30),
+              'circulation': (2, 30), 'ann intern med': (2, 30), 'eur heart j': (2, 30),
+              'jama intern med': (2, 30), 'jama cardiol': (2, 30), 'jama surg': (2, 30),
+              'jama neurol': (2, 30),
+              # Tier 3 — core EM / critical-care journals
+              'ann emerg med': (3, 20), 'crit care med': (3, 20), 'crit care': (3, 20),
+              'critical care': (3, 20), 'resuscitation': (3, 20), 'chest': (3, 20),
+              'acad emerg med': (3, 20), 'emerg med j': (3, 20), 'shock': (3, 20),
+              'ann intensive care': (3, 20), 'eur j emerg med': (3, 20), 'cjem': (3, 20),
+              'jama netw open': (3, 18),
+          }
 
-          def journal_tier(j):
-              jl = (j or '').lower()
-              # tier1 must avoid matching 'lancet respir' as plain 'lancet' before tier2? handle order
-              for name in TIER2:
-                  if name in jl: return 2, 30
-              for name in TIER1:
-                  if name in jl: return 1, 40
-              for name in TIER3:
-                  if name in jl: return 3, 20
-              return 4, 8
+          def journal_tier(abbrev, title):
+              key = (abbrev or '').strip().rstrip('.').lower()
+              if key in JMAP: return JMAP[key]
+              tkey = (title or '').strip().rstrip('.').lower()
+              if tkey in JMAP: return JMAP[tkey]
+              return (4, 8)
+
+          # ---------- Stage 2: EM/CCM relevance bonus ----------
+          EM_TERMS = ['emergency department','emergency medicine','intensive care','critical care',
+                      'icu','sepsis','septic shock','resuscitation','cardiac arrest','out-of-hospital',
+                      'prehospital','mechanical ventilation','vasopressor','intubation','triage',
+                      'trauma','acute respiratory','shock','code blue','acute kidney injury']
+
+          def relevance(title, abstract):
+              s = (title + ' ' + abstract).lower()
+              hits = sum(1 for t in EM_TERMS if t in s)
+              return min(hits * 3, 12)   # up to +12
 
           # ---------- Stage 2: study design ----------
           def design(pubtypes):
@@ -102,10 +120,12 @@ jobs:
               abstract = r.get('abstractText', '') or ''
               abstract = re.sub(r'<[^>]+>', '', abstract)
 
-              tier, tw = journal_tier(jrnl)
+              jabbrev = (r.get('journalInfo', {}).get('journal', {}).get('medlineAbbreviation') or jrnl)
+              tier, tw = journal_tier(jabbrev, jrnl)
               dw, stype = design(pubtypes)
               sw, n_est = sample_size(abstract)
-              pre_score = tw + dw + sw
+              rw = relevance(r.get('title', ''), abstract)
+              pre_score = tw + dw + sw + rw
 
               papers.append({
                   'pmid': r.get('pmid', ''),
